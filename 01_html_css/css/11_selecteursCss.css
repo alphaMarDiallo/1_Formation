@@ -103,4 +103,6 @@ div#d{
 div#g{    
     margin-left: 52%;
     margin-top: -43%;
+    box-sizing: content-box;
+    height: 5%;
 }
