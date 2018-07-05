@@ -16,6 +16,7 @@ body{
     border-top: 3px solid rbg(219 219 219);
     /* borduredu haut qui donne un effet d'ombre venant de la nav */
 }
+/* taille carousel */
 #carouselExampleFade.carousel.slide.carousel-fade{
     width: 600px;
     height: 699px;
