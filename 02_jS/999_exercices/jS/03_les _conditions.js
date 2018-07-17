@@ -1,5 +1,5 @@
 // alert('js ready'); 
-var age = prompt('Quel est votre age :');
+var age = parseInt(prompt('Quel est votre age :'));
 if(age >= 18){
     alert('bienvenue sur ce site');
 } else {
