@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Correction Tp2</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="css/correction_tp2.css">
 </head>
 <body>
     <div class="conteneur">
         <header>
             <div class="nav_bar">
-                <h1>C<u>e</u> soir</h1>
+                <h1>C<span id="e">e</span id="e"> soir</h1>
                 <p class="underline"></p>
                 <ul>
                     <li><a href="#store">Store</a></li>
@@ -20,8 +21,12 @@
                     <li><a href="#local">Local</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <img src="img/cerf.svg" alt="image_cerf" class="cerf">
+                <div id="triangle">
+                </div>
+                <img src="img/cerf.svg" alt="image_cerf" class="cerf">                
             </div>
+            <div class="fleche"></div>
+            <!-- <i class="far fa-angle-down"></i> -->
             <!-- <div class="txt1">
                 <h2></h2>
                 <hr>
@@ -32,7 +37,7 @@
             <section class="store" id="store">
                 <div class="a">
                     <h3>Our store</h3>
-                    <hr>
+                    <p class="underline"></p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias numquam expedita dicta nisi id quae, necessitatibus eius rem odit officia natus ut quidem blanditiis omnis delectus impedit facilis fuga obcaecati?</p>
                     <span>est. 2004</span>
                 </div>
@@ -49,7 +54,7 @@
                 <div class="d">
                     <img src="img/G1.jpg" alt="graine">
                     <h3>Fresh fare</h3>
-                    <hr>
+                    <p class="underline"></p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda soluta atque quisquam ducimus sunt quibusdam quis quidem labore officiis minima voluptatibus esse incidunt aliquid porro at voluptatum dolore, est excepturi?</p>
                     <span>All natural</span>
                 </div>
@@ -60,7 +65,7 @@
                 <div class="e">
                     <img src="img/G2.jpg" alt="graine">
                     <h3>Local distillition</h3>
-                    <hr>
+                    <p class="underline"></p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda soluta atque quisquam ducimus sunt quibusdam quis quidem labore officiis minima voluptatibus esse incidunt aliquid porro at voluptatum dolore, est excepturi?</p>
                     <span>Craft liquor</span>
                 </div>
