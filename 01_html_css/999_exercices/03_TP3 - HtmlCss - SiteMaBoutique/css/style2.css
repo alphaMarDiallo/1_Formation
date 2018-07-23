@@ -112,7 +112,8 @@ nav{
     .menu ul{
         display: flex;
         margin: 0;
-        justify-content: space-around;
+        justify-content:space-between;
+        padding-left: 0px;
         list-style: none;
     }
     .menu ul li a{
@@ -307,7 +308,7 @@ footer{
     height: 4vh;
     line-height: 229%;
     position: relative;
-    position: relative;
+    /* position: relative; */
     top: 2.6%;
     }
     footer ul{
