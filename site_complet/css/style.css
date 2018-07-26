@@ -1,0 +1,565 @@
+*{
+    box-sizing: border-box;
+}
+/* NORMALIZE */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, acronym, address, 
+big, cite, code, del, dfn, em, img, ins, kbd, 
+q, s, samp, small, strike, strong, sub, sup, 
+tt, var,b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, 
+tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, 
+figcaption, footer, header, hgroup, menu, nav, 
+output, ruby, section, summary, time, mark, audio, video{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* REGLAGES GENERAUX*/
+body{
+    background-image: url(../img/mekong-green.png);
+    scroll-behavior: smooth; /* effet de scroll quand on clique sur une ancre - ne marche que sur Firefox, Chrome et Opera dernieres versions */
+}
+h1{
+    font-size: 45px; /* EMMET => fz45px + tab */
+    font-family: 'Anton', sans-serif;
+    color: #2980b9;
+    text-align: center; /*EMMET => tac + tab */
+    letter-spacing: 1px; /*EMMET => Ls1 +tab */
+}
+h2{
+    font-size: 35px;
+    color: #2c3e50;
+    padding: 20px; /* EMMET => p20 + tab */
+    font-weight: bold; /*EMMET => fwb + tab */
+    text-shadow: 1px 1px 2px #aaa; /* 4 valeurs : ombre horizontale, verticale, zone de flou, couleur de l'ombre*/
+}
+h3{
+    font-size: 22px;
+    color: #2c3e50;
+    padding: 15px;
+    text-shadow: 1px 1px 2px #aaa;
+}
+h4{
+    text-align: center;
+    margin-top: 30px; /* EMMET => mt30 + tab */
+}
+blockquote{
+    font-style: italic;
+    font-size: 120%;
+}
+strong{
+    font-weight: bold; /* EMMET => fwb + tab */
+}
+/* -----------------HEADER------------------- */
+header{
+    background: #2c3e50;
+    height: 175px; /*EMMET => h175 + tab */
+}
+#logo{
+    float: left; /*EMMET => fl + tab */
+    width: 25%;
+    background: #2c3e50;
+    padding: 15px;
+    text-align: center;
+}
+#slogan{
+    float: left;
+    width: 50%;
+    background: #2c3e50;
+    padding-top: 50px; /*EMMET => pt50 + tab */
+}
+#social{
+    float: left;
+    width: 25%;
+    }
+    #social i{
+        background: #2c3e50;
+        font-size: 30px;
+        text-align: right; /* EMMET => tar + tab */
+        padding: 15px 30px 0 0;
+        display: block; /* EMMET => db + tab */
+    }
+header a{
+    color: #10828c;
+    text-decoration: none; /* EMMET => tdn + tab */
+    
+} 
+/* nav{ 
+    background-color: lightblue;
+    justify-content: space-around;
+    display: flex;
+    height: 50px; 
+}*/
+/*-----------------FIN HEADER--------------- */
+/*----------------DEBUT NAV--------------- */
+nav{
+    background: #2980b9;
+    height: 70px;
+    border-bottom: 8 px solid #6acafc;
+    text-align: center;
+    padding: 15px;
+}
+nav a{
+    margin: 10px;
+    padding: 2px 10px;
+    border-radius: 10px opx;
+    border: 2px solid #fff;
+    background: #6acafc;
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Sunflower', sans-serif;
+    transition: 0.5;
+}
+nav a:hover{
+    background: #a6d6c3;
+    color:#fff;
+}
+.activ{
+    background: #2c3e50;
+    color: #fff;
+}
+/*-----------FIN NAV---------*/
+
+/* ---------ZONING------------ */
+/*FAIRE LE ZONING AVEC DES HAUTEURS ET LARGEURS AVANT DE PLACER LES ELEMENTS DANS LES ZONES POUR ENSUITE SUPPRIMER LES HAUTEURS*/
+main{
+    background: rgba( 178,178,178,0.30);
+    width: 1000px;
+    margin :0 auto;
+}
+aside{
+    height: 250px;
+    background: #a6d6c3;
+}
+section{
+    margin-top :50px;
+    padding :20px;
+}
+footer{
+    background: #2980b9;
+    height: 30px;
+}
+/* --------- FIN ZONING------------ */
+
+/*----------- DEBUT PAGE SELECTEURS ------*/
+
+.select p{
+    color: red;
+}
+.select p:first-of-type{
+    color: pink;
+}
+/* la pseudo class :first-of-type permet de cibler le premier élément dont l'élément parent est d'un type de donné(ex. cibler le premier enfant d'une div) */
+.select p:nth-of-type(5), .select p:nth-of-type(6){
+    color: black;
+}
+.select div:not(.zoneB){
+    font-weight: bold;
+    font-size: 30px;
+}
+.select .zoneA{
+    color: #f56f56;
+}
+.select .zoneB{
+    color: #996633;
+}
+.select .zoneB .couleurBleu{
+    color: blue;
+    font-size: 16PX;
+}
+.select .zoneD{
+    color: #98f32f;
+}
+.select #zoneD span{
+    color: #32ff32;
+    font-size: 30px;
+    font-style: italic;    
+}
+/*----------- FIN PAGE STRUCTURE---------- */
+
+/* -----------DEBUT IMAGE------------- */
+.imgCss{
+    background-image: url('../img/fond.jpg');
+    height: 67vh;
+    background-repeat: no-repeat;
+    }
+    .imgCss p{
+        height: 16vh;
+        width: 83%;
+        border-radius: 2%;
+        margin: 0 auto;
+        line-height: 156%;
+        position: relative;
+        top: 137px;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding-left: 11px;
+        padding-right: 11px;
+        text-align: justify;
+    }
+
+.imgHtml img{
+    margin-top: 60px;
+    position: relative;
+    left: 35%;
+}
+.imgHtmlCss{
+    height: 600px;
+    }
+.imgHtmlCss h3{
+    margin-bottom: 21px;
+    }
+
+    .imgHtmlCss .bas{
+        position: relative;
+        top: 47%;
+    }
+    .imgHtmlCss .gauche{
+        position: relative;
+        left: 10%;
+    }
+    .imgHtmlCss .droite{
+        position: relative;
+        right: 10%;
+    }
+    .bas, .gauche, .droite{
+        border: 6px solid #fff; 
+        box-shadow: 5px 5px 5px 0px #656565;
+    }
+
+    .gauche, .droite{
+        /* cursor: pointer; */
+        /* transform: rotate(10deg);        */
+        transition-duration: 1s    
+    }
+    .gauche:hover, .droite:hover{
+        /* cursor: pointer; */
+        transform: rotate(20deg);       
+        /* transition-duration: 1s;
+    } */
+    /* .gauche:hover, .droite:hover{
+        cursor: pointer;
+        transform: rotate(20deg);       
+        transition-duration: 1s;*/
+    } 
+    
+    .bas:hover{
+        /* cursor: pointer; */
+        transform: rotate(380deg);    
+        /* transition-duration: 1s; */
+    }
+    .bas{
+        transition-duration: 1s  
+        /* cursor: pointer; */
+        /* transform: rotate(380deg);     */
+        /* transition-duration: 1s; */
+    }
+
+
+/* .gauche, .droite{
+    cursor: pointer;
+    transform: rotate(10deg);       
+    transition: transition 1s;
+   
+   
+}
+.gauche:hover, .droite:hover{
+    cursor: pointer;
+    transform: rotate(10deg);       
+    transition-duration: 0.1s;
+}
+.gauche:hover, .droite:hover{
+    cursor: pointer;
+    transform: rotate(10deg);       
+    transition-duration: 0.1s;
+}
+.bas:hover{
+    cursor: pointer;
+    transform: rotate(380deg);    
+    transition-duration: 1s;
+} */
+
+/* -----------FIN PAGE IMAGE------------- */
+
+/* -----------BOUTON TOP------------- */
+button{
+    position:fixed;
+    bottom: 40px;
+    right: 20px;
+    cursor: pointer;
+    border: none;
+    background: transparent;    
+    font-size: 250%;
+    color: rgba(151, 216, 178, 0.5);
+}
+/* -----------FIN BOUTON TOP------------- */
+/* ----------- PAGE POSITION ------------------ */
+
+
+
+.centre{
+    background: #33cccc;
+    margin: 0 auto;
+    width: 500px;
+    height: 166px;
+}
+.absolute{
+    position: absolute;
+    background: orange;
+    width: 100px;
+    height: 100px;
+    top: 25%;
+    left:10%;
+}
+.relative{
+    background: #0000ff;
+    height: 500px;
+    width: 400px;
+    position: relative;
+    bottom: 10px;
+    left: 100px;
+}
+.relative div{
+    background: yellow;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top:0;
+    right: 0;
+}
+
+.trente{
+    width: 30%;
+    padding: 20px;
+    font-size: 22px;
+    background: #3C1B1F;
+    color: #F6E1B5;
+    font-weight: bold;
+}
+.cinquante{
+    width: 50%;
+    padding: 20px;
+    font-size: 22px;
+    background: #6dc9c8;
+    color: #F6E1B5;
+    font-weight: bold;
+}
+.cent{
+    width: 100%;
+    padding: 20px;
+    font-size: 22px;
+    background: #e40475;
+    color: #F6E1B5;
+    font-weight: bold;
+}
+/* ----------- FIN POSITION ------------------ */
+/* ----------- PAGE ZONING ------------------ */
+
+/* zonig 1 */
+.zone1{
+    border: 1px solid;
+    height: 637px;
+    width: 795px;
+    margin: 0 auto;
+    text-align: center;
+}
+.zone1 .haut{
+    background: yellow;
+    height: 54px;
+}
+
+.zone1 .z-droite{
+    border: 1px solid;
+    height: 582px;
+    width: 212px;
+    float: left;
+    background: #a6d6c3;
+    
+}
+.zone1 .z-gauche{
+    border: 1px solid;
+    height: 582px;
+    width: 581px;
+    float: left; 
+    background: #10828c;
+}
+/* zone 2 */
+.zone2{
+    border: 1px solid;
+    height: 637px;
+    width: 795px;
+    margin: 0 auto;
+    text-align: center;
+}
+.header{
+    background: #fff;
+    height: 46px;
+}
+.aside1{
+    width: 90px;
+    float: left;
+    height: 588px;
+}
+.middle{
+    background: aqua;
+    width: 613px;
+    float: left;
+    height: 588px;
+}
+.aside2{
+    width: 90px;
+    float: right;
+    height: 588px;
+}
+/* zone 3 */
+.zone3{
+    border: 1px solid;
+    height: 637px;
+    width: 795px;
+    margin: 0 auto;
+    text-align: center;
+}
+.s-gauche{
+    background: #2c3e50;
+    margin-top: 0px; 
+    height: 587px;
+    width: 50%; 
+    float: left  
+}
+.s-droite{
+    background: #656565;
+    margin-top: 0px;
+    height: 587px;
+    width: 50%;
+    float: left
+}
+.footer{
+    background: #3C1B1F;
+    height: 48px;
+}
+/* zone 4 */
+.zone4{
+    border: 1px solid;
+    height: 637px;
+    width: 795px;
+    margin: 0 auto;
+    text-align: center;
+}
+.d-header{
+    background: #fff;
+    height: 94px;
+}
+.d-nav{
+    background: #6dc9c8;
+    height: 46px;
+}
+.d-bleu{
+    background: #2980b9;
+    height: 10px;
+}
+.d-contenu{
+    background: #10828c;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-right-width: 0px;
+    border-right-style: solid;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 417px;
+}
+.d-footer{
+    background: #3C1B1F;
+    height: 48px;
+}
+/* zone 5 */
+.zone5{
+    border: 1px solid;
+    height: 637px;
+    width: 795px;
+    margin: 0 auto;
+    text-align: center;
+}
+.z-header{
+    background: #fce38a;
+    height: 94px;
+}
+.z-nav{
+    background: #d6bc6b;
+    height: 46px;
+}
+.z-bleu{
+    background: #c19718;
+    height: 10px;
+}
+.z-contenu{
+    /* background: #10828c; */
+    margin: 0 auto;
+    margin-top: 10px;
+    border-right-width: 0px;
+    border-right-style: solid;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0;
+    height: 417px;
+}
+.z-1, .z-2, .z-3, .z-4{
+    /* border: 1px solid; */
+    height: 208px;
+    width: 386px;
+    float: left;
+    }
+    .z-1, .z-4{
+        background: #d6bc6b;
+        
+    }
+    .z-2, .z-3{
+        background: #fce38a;
+
+    }
+.z-footer{
+    background: #fce38a;
+    height: 48px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.clear{
+    clear: both;
+}
