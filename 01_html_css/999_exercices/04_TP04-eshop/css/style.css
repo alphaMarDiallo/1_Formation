@@ -1,0 +1,477 @@
+/*  DEBUT CONTAINER */
+.container{
+    background: #ffffff;
+    height: 300vh;
+    width: 100vw;
+    margin: 0 auto;
+}
+/*  DEBUT HEADER */
+headder{
+    /* background: brown; */
+    height: 21vh;
+    width: 100vw;
+}
+    /*  aside.tag */
+.tag{
+    background: black;
+    height: 4vh;
+    width: 100vw;
+    padding-top: 1px;
+    }
+    .tag ul{
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+    }.tag ul li{
+        color: white;       
+    }
+    /*  fin aside.tag */
+    /*  div.logo */
+.logo{
+    /* background: bisque; */
+    height: 16vh;
+    width: 58vw;
+    float: left;
+    }
+    .logo img{
+        position: relative;
+        left: 8vw;
+        top: 3vh;
+    }
+    .logo p{
+        position: relative;
+        left: 8vw;
+        top: 2vh;
+        color: grey;
+    }
+    /*  fin div.logo */
+    /*  div.info */
+.info{
+    /* background: blueviolet; */
+    height: 16vh;
+    width: 42vw;
+    float: left;
+    }
+    .a1, .a2, .a3, .a4{
+        /* border: 1px solid; */
+        height: 49%;
+        width: 49.2%;
+        float: left;
+    }
+.a1 img{
+    position: relative;
+    left: 2vw;
+    top: 2vh;
+    }
+    .a1 h4{
+        position: relative;
+        left: 6vw;
+        bottom: 4vh;
+        font-size: 1.1em;;
+    }
+    .a1 p{
+        position: relative;
+        left: 6vw;
+        bottom: 6vh;
+        color: grey;
+    }
+.a2 img{
+    position: relative;
+    left: 16vw;
+    top: 2vh;
+    }
+    .a2 h4{
+        position: relative;
+        bottom: 5vh;
+        left: 6vw;
+        font-size: 1.1em;;
+    }
+    .a2 p{
+        position: relative;
+        bottom: 7vh;
+        left: 6vw;
+        color: grey;
+    }
+.a3 img{
+    position: relative;
+    left: 2vw;
+    top: 2vh;
+    }
+    .a3 h4{
+        position: relative;
+        left: 6vw;
+        bottom: 4vh;
+        font-size: 1.1em;;
+    }
+    .a3 p{
+        position: relative;
+        left: 6vw;
+        bottom: 6vh;
+        color: grey;
+    }
+.a4 img{
+    position: relative;
+    left: 16vw;
+    top: 1vh;
+    width: 3vw;
+    }
+    .a4 h4{
+        position: relative;
+        bottom: 6vh;
+        left: 6vw;
+        font-size: 1.1em;;
+    }
+    .a4 p{
+        position: relative;
+        bottom: 8vh;
+        left: 6vw;
+        color: grey;
+    }
+    /*  fin div.info */
+/*  FIN HEADER */
+/* NAV */
+.menu{
+    /* background: aquamarine; */
+    background: #f4f4f4;
+    box-shadow: 1px 0px 12px 0px rgba(0,0,0,0.29);
+    height: 4vh;
+    width: 100vw;
+    }
+    .menu ul{
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 0px;
+        padding-top: 9px;
+        list-style: none;
+    }
+    .menu ul li p{
+        position: relative;
+        bottom: 26%;
+    }
+/* FIN NAV */
+/* DEBUT MAIN */
+    /* section.slide */
+.slider{
+    /* background: bisque; */
+    height: 48vh;
+    width: 100vw;
+    margin-top: 2vh;
+}
+.slide1{
+    /* border: 1px solid; */
+    height: 48vh;
+    width: 59vw;
+    float: left;
+}
+    .slide1 img{
+        position: relative;
+        left: 14vw;
+    }
+.slide2, .slide3{
+    /* border: 1px solid; */
+    height: 23vh;
+    width: 34vw;
+    float: left;
+}
+.slide2 img, .slide3 img{
+    width: 20vw;
+    position: relative;
+    left: 6vw;
+}
+.slide2 p, .slide3 p{
+    background: #f442f4;
+    bottom: 4vh;    
+    /* border: 1px solid;     */
+    text-align: center;    
+    position: relative;
+    left: 6vw;    
+    width: 58.4%;    
+    color: white;    
+}
+.slide2{
+   margin-bottom: 15px;
+}
+        /* debut div.info2*/
+.info2{
+    /* background: aquamarine; */
+    height: 11vh;
+    width: 100vw;
+    }
+.b1, .b2, .b3, .b4, .b5, .b6, .b7{
+    /* border: 1px solid; */
+    height: 5vh;
+    width: 24.7%;
+    float: left;
+    }
+    .b1 i, .b3 i, .b4 i, .b5 i, .b7 i{
+       position: relative;
+       left: 2vw;
+       top: 2vh;
+       color: grey;
+    }
+    .b2 img{
+        width: 3vw;
+        position: relative;
+        top: 2vh;
+    }
+    .b6 img{
+        width: 3vw;
+        position: relative;
+        top: 1vh;
+    }
+    .b2 p, .b6 p{
+        position: relative;
+        left: 6vw;
+        bottom: 4vh;
+        color: grey;
+    }
+    .b1 p, .b3 p, .b4 p, .b5 p, .b7 p{
+        position: relative;
+        left: 6vw;
+        bottom: 2vh;
+        color: grey;
+    }
+  
+        /* fin div.info2*/
+    /* fin section.slide */
+    /* debut section.produits */
+.produits{
+    /* background: aqua; */
+    height: 76vh;
+    width: 100vw;
+    position: relative;
+    top: 9vh;
+    }
+    /* .t-produits h3{
+        background: #f442f4;
+        position: relative;
+        left: 73vw;
+        width: 9vw;
+        height: 11vh;
+        line-height: 5vh;
+    } */
+.pic1, .pic2, .pic3, .pic4, .pic5, .pic6{
+    /* border: 1px solid; */
+    height: 32vh;
+    width: 30vw;
+    float: left;
+    margin-left: 27px;
+    margin-right: 27px;
+    margin-bottom: 22px;
+    }
+    .pic1 img, .pic2 img, .pic3 img, .pic4 img, .pic5 img, .pic6 img{
+
+       height: 19vh;
+       width: 15vw;
+       position: relative;
+       left: 14vh;
+        
+    }
+    .pic1 .p1, .pic2 .p1, .pic3 .p1, .pic4 .p1, .pic5 .p1, .pic6 .p1{
+        position: relative;
+        bottom: 1vh;
+        left: 10vw;   
+    }
+    .pic1 span, .pic2 span, .pic3 span, .pic4 span, .pic5 span, .pic6 span{
+         position: relative;
+         bottom: 2vh;
+         color: #f442f4;
+         left: 13vw;
+    }
+        /* debut div.talon */
+.talon{
+    padding-left: 57px;
+    }
+    .p1-a, .p1-b{
+        float: left;
+        position: relative; 
+        height: 3vh;       
+        width: 27.5%;        
+        border: 1px solid;        
+        left: 4vw;        
+        bottom: 12%;        
+        color: white;
+        text-align: center;
+    }
+    .p1-a{
+        background: black;
+    }
+    .p1-b{
+        background: #f442f4;
+    }
+.de{
+    background: grey;
+    color: white;
+    position: relative;
+    left: 7vw;
+    width: 15vw;
+    text-align: center;
+    bottom: 4vh;
+}   
+        /* fin div.talon */ 
+    /* fin section.produits */
+    /* Debut div.shop */
+.shop{
+    /* background: blueviolet; */
+    height: 56vh;
+    width: 100vw;
+    position: relative;
+    top: 9vh;
+}
+/* FIN A REPLACER */
+.wrap-shop{
+    background:  #616161;
+    height: 40vh;
+}
+.wrap-shop p{
+    color: #ffffff;
+}
+.contact, .horraires, .nous{
+       /* border: 1px solid; */
+    float: left;
+    height: 34vh;
+    width: 29vw;
+}
+/* A REPLACER */
+#contact{
+    position : relative;
+    top: 2vh;
+    height: 4vh;
+    width: 10vw;
+    margin-left: 45px;
+    background: url('../img/sprites.png')no-repeat; 
+    background-position: 0px -105px;
+    } 
+#adresse{
+    position: relative;
+    left: 5vw;
+    bottom: 3vh;
+}
+#t-phone{
+    position : relative;
+    top: 1vh;
+    height: 4vh;
+    width: 10vw;
+    margin-left: 45px;
+    background: url('../img/sprites.png')no-repeat; 
+    background-position: -1px -140px;
+} 
+#phone{
+    position: relative;
+    left: 5vw;
+    bottom: 4vh;
+}
+#t-email{
+    position : relative;
+    top: 1vh;
+    height: 4vh;
+    width: 10vw;
+    margin-left: 45px;
+    background: url('../img/sprites.png')no-repeat; 
+    background-position: -1px 0px;
+}
+#email{
+    position: relative;
+    left: 5vw;
+    bottom: 4vh;
+}
+#horraire{
+    position : relative;
+    top: 1vh;
+    height: 4vh;
+    width: 10vw;
+    margin-left: 45px;
+    background: url('../img/sprites.png')no-repeat; 
+    background-position: -1px 0px;
+}
+#horraires{
+    position: relative;
+    left: 5vw;
+    bottom: 4vh;
+    width: 16vw;
+}
+#about{
+    position : relative;
+    top: 1vh;
+    height: 4vh;
+    width: 10vw;
+    margin-left: 45px;
+    background: url('../img/sprites.png')no-repeat; 
+    background-position: -1px 0px;
+}
+#nous{
+    position: relative;
+    left: 5vw;
+    bottom: 4vh;
+    width: 16vw;
+}
+    /* fin div.shop */
+
+/* FIN MAIN */
+/* DEBUT FOOTER*/
+footer{
+   /* background: yellow; */
+   height: 65vh;
+   width: 100vw;
+   position: relative;
+   top: 9vh;
+}
+.footNav{
+    /* background: aquamarine; */
+    height: 5vh;
+    width: 100vw;
+    }
+    .footNav ul{
+        display: flex;
+        justify-content: space-around;        
+        margin-top: 0px;        
+        line-height: 5vh; 
+        list-style: none;       
+    }
+.footSection{
+    /* background: blueviolet; */
+    height: 80vh;
+    width: 75vw;
+    float: left;
+}
+#eshop, #information, #qualite{
+    /* border: 1px solid; */
+    height: 10%;    
+    width: 33.1%;    
+    float: left;
+    }
+    #eshop ul, #information ul{
+        list-style: none;
+        position: relative;
+        left: 8vw;
+    }
+    #eshop ul li a, #information ul li a{
+        color:  grey;
+    }
+    #eshop img, #qualite img{
+        position: relative;
+        left: 8vw;
+    }
+.copyRight img{
+    position: relative;
+    top: 91%;
+    width: 75vw;
+}
+.reseaux{
+    /* background: bisque; */
+    height: 80vh;
+    width: 24vw;
+    float: left;
+    }
+    .reseaux img{
+        width: 16vw;
+        position: relative;
+        left: 5vw;
+    }
+/* FIN FOOTER*/
+
+
+.clear{
+    clear: both;
+}
+/*  FIN CONTAINER */

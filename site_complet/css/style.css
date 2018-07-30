@@ -379,8 +379,7 @@ button{
     height: 582px;
     width: 212px;
     float: left;
-    background: #a6d6c3;
-    
+    background: #a6d6c3;   
 }
 .zone1 .z-gauche{
     border: 1px solid;
@@ -517,19 +516,130 @@ button{
     float: left;
     }
     .z-1, .z-4{
-        background: #d6bc6b;
-        
+        background: #d6bc6b;     
     }
     .z-2, .z-3{
         background: #fce38a;
-
     }
 .z-footer{
     background: #fce38a;
     height: 48px;
-
-
-
+    }
+    /* zone 6 */
+    .zone6{
+        border: 1px solid;
+        height: 637px;
+        width: 795px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .z6-header{
+        background: #996633;
+        height: 109px;
+        width: 793px;
+        }
+        .h1, .h3{
+            background: #0000ff;
+            height: 109px;
+            width: 151px;
+            float: left;
+        }
+        .h2{
+            background: #2980b9;
+            height: 109px;
+            width: 491px;
+            float: left;
+        }
+    .z6-menu{
+        background: #10828c;
+        height: 30px;
+        width:793px;
+    }
+    .z6-aside{
+        background: yellow;
+        height: 461px;
+        width: 96px;
+        float: left;
+    }
+    .z6-ab{
+        background: bisque;
+        height: 162px;
+        width: 697px;
+        float: left;
+        }
+        .a, .b{
+            height: 162px;
+            width: 348px;
+            float: left;
+        }
+        .a{
+            background: grey;
+        }
+        .b{
+            background: #3C1B1F;
+        }
+    .z6-slide{
+        background: red;
+        height: 142px;
+        width: 697px;
+        float: left;
+    }
+    .z6-grid{
+        background: #656565;
+        height: 157px;
+        width: 697px;
+        float: left;
+        }
+        .c, .d, .e, .f{
+            height: 157px;
+            width: 174px;
+            float: left;
+        }
+        .c{
+            background: #0000ff;
+        }
+        .d{
+            background: grey;
+        }
+        .e{
+            background: #0000ff;
+        }
+        .f{
+            background: grey;
+        }
+    .z6-footer{
+        background: pink;
+        height: 35px;
+        width: 793px;
+    }
+    /* zoning 7 */
+    .zone7{
+        border: 1px solid;
+        height: 637px;
+        width: 795px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .z7-G, .z7-D{
+        background: purple;
+        height: 635px;
+        width: 125px;
+        float: left;    
+    }
+    .z7-middle{
+        background: bisque;
+        height: 635px;
+        width: 543px; 
+        float: left;
+        }
+        .z7-0{
+            background: aquamarine;
+            height: 100px;
+            width: 528px;
+            position: relative;
+            top: 7px;
+            left: 8px;
+        }
 
 
 
