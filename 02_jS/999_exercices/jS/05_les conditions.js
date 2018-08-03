@@ -47,7 +47,7 @@ var mois = parseInt(prompt('Quel mois on est ? ', '<saisissez entre 1 et 12>'));
 
 if(mois === 2) { 
     document.write('Le mois n ' + date + 'a 28   jours' );
-} else if((date ===43) || (mois ===6) || (mois === 9) || (mois === 11)){
+} else if((date ===3) || (mois ===6) || (mois === 9) || (mois === 11)){
     document.write('Le mois n ' + date + 'a 30 jours' );
 } else if ((mois === 1) || (mois === 3) || (mois === 5) || (mois === 7) || (mois === 8) || (mois === 10) || (mois === 12)){
     document.write('Le mois n ' + date + 'a 31 jours' );

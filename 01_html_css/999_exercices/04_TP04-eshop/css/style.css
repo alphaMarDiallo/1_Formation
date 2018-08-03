@@ -165,6 +165,24 @@ headder{
     width: 59vw;
     float: left;
 }
+    /* btn_slider */
+.butonLeft{
+    /* border: 1px solid; */
+    position: absolute;
+    left: 15vw;
+    width: 2vw;
+    top: 50vh;
+    z-index: 1;
+}
+.butonRight{
+    /* border: 1px solid; */
+    position: absolute;
+    left: 53vw;
+    width: 2vw;
+    top: 50vh;
+    z-index: 1;
+}
+    /* FIN btn_slider */
     .slide1 img{
         position: relative;
         left: 14vw;
@@ -218,7 +236,7 @@ headder{
     left: 6vw;
 }
 .slide2 p, .slide3 p{
-    background: rgb(253, 40, 240);
+    background: #f42a76;
     bottom: 4vh;    
     /* border: 1px solid;     */
     text-align: center;    
@@ -327,7 +345,7 @@ headder{
         }
         .produits h3{
             text-align: center;
-            background: rgb(253, 40, 240);            
+            background: #f42a76;            
             border: 1px solid;
             width: 8vw;            
             color: #fff;            
@@ -339,7 +357,7 @@ headder{
             height: 0;
             width: 0;            
             margin-left: 159px;
-            border-bottom:41px solid rgb(253, 40, 240); 
+            border-bottom:41px solid #f42a76; 
             border-right: 20px solid transparent;
             position: relative;
             bottom: 5vh;
@@ -378,9 +396,26 @@ headder{
     .pic1 span, .pic2 span, .pic3 span, .pic4 span, .pic5 span, .pic6 span{
          position: relative;
          bottom: 2vh;
-         color: rgb(253, 40, 240);
+         color: #f42a76;
          left: 5vw;
     }
+        /* bando promotionnel */
+    #promo{
+        position: absolute;
+        right: 44.8%;
+        z-index: 1;
+    }
+    #livraison{
+        position: absolute;
+        right: 17.9%;
+        z-index: 1;
+    }
+    #nouveau{
+        position: absolute;
+        right: 17.9%;
+        z-index: 1;
+    }
+        /* FIN bando promotionnel */
         /* debut div.talon */
 .talon{
     padding-left: 57px;
@@ -408,7 +443,7 @@ headder{
         text-align: center;
     }
     .p1-b{
-        background: rgb(253, 40, 240);
+        background: #f42a76;
         position: relative; 
         height: 2vh;       
         width: 59.6%;        
@@ -441,13 +476,13 @@ headder{
         position: relative;
         left: 33vw;
         bottom: 6vh;
-        color: rgb(253, 40, 240);
+        color: #f42a76;
     }
     .shop h3{
         /* border: 1px solid; */
         width: 5vw;
         text-align: center;
-        background: rgb(253, 40, 240);
+        background: #f42a76;
         position: relative;
         left: 4vw;
         top: 3vh;
@@ -461,7 +496,7 @@ headder{
         position: absolute;
         z-index: 1;
         left: 8.3%; 
-        border-top: 17px solid rgb(253, 40, 240);
+        border-top: 17px solid #f42a76;
         transition: rotate(-45deg);
         transform: rotate(50deg);
         bottom: 88.1%;       
@@ -651,6 +686,88 @@ footer{
     position: relative;
     left: 10vw;
 }
+
+#qualite img{
+    left: 8vw;
+    top: 2vh;
+}
+.reseaux{
+    /* background: bisque; */
+    height: 80vh;
+    width: 24vw;
+    float: left;
+    }
+.reseaux img{
+    width: 16vw;
+    position: relative;
+    left: 5vw;
+    top: 2vh;
+}
+    /* favicone */
+.reseaux ul{
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: 7vh;
+    list-style: none;
+    }
+    .reseaux ul li a{
+        color: #040404; 
+    }
+    /* fin favicone */
+    /* formulaire */
+    
+.newsLetter{
+    /* border: 1px solid; */
+    width: 16vw;
+    height: 16vh;
+    padding-top: 5px;
+    position: relative;
+    left: 5vw;
+    top: 5vh;
+    text-align: center;
+    }
+    .newsLetter h3{
+        font-weight: bold;
+    }
+    .newsLetter input{
+        position: relative;
+        top: 2vh;  
+    }
+.newsLetter span, .ami span{
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 1vh;
+}
+.ami{
+    /* border: 1px solid; */
+    width: 16vw;    
+    height: 25vh;  
+    padding-top: 5px;  
+    position: relative;    
+    left: 5vw;    
+    top: 7vh;    
+    text-align: center;
+    }
+    .ami h3{
+        margin-top: 7.717px;
+        margin-bottom: -5.283px;
+    }
+    .ami span, input{
+        position: relative;
+        top: 2vh; 
+    }
+.newsLetter, .ami{
+    background: #ebe7e8;
+}
+    /* fin  formulaire */
+.traitFooter{
+    border: 1px solid grey;
+    position: relative;    
+    top: 68vh;
+    width: 89vw;    
+    left: 4vw; 
+}
 .copyRight img{
     position: relative;
     top: 91%;
@@ -676,28 +793,6 @@ footer{
         bottom: 6vh;
         color: grey;
     }
-#qualite img{
-    left: 8vw;
-    top: 2vh;
-}
-.reseaux{
-    /* background: bisque; */
-    height: 80vh;
-    width: 24vw;
-    float: left;
-    }
-    .reseaux img{
-        width: 16vw;
-        position: relative;
-        left: 5vw;
-    }
-.traitFooter{
-    border: 1px solid grey;
-    position: relative;    
-    top: 68vh;
-    width: 89vw;    
-    left: 4vw; 
-}
 /* FIN FOOTER*/
 
 

@@ -641,7 +641,14 @@ button{
             left: 8px;
         }
 
-
+/* ----- DEBUT TABLEAU -------- */
+table{
+    margin: 0 auto;
+}
+.date{
+    background: #d0e3fa;
+}
+/* ----- FIN TABLEAU -------- */
 
 
 
