@@ -650,8 +650,91 @@ table{
 }
 /* ----- FIN TABLEAU -------- */
 
+/* DEBUT LISTE */
 
+/* FIN LISTE */
+/* DEBUT LIENS ET MENU */
+    /* debut liens */
+    .p-liens{
+        display: flex;
+        position: relative;
+        left: 2vw;
+        list-style: none;
+        justify-content: space-evenly;
+    }
+    .p-liens li{
+        background: #2c3e50; 
+        border-radius: 32%;
+        height: 3vh;
+        width: 5vw;
+        text-align: center;
+    }
+    .p-liens li:last-child{
+        width: 8vw;
+    }
+    .p-liens li a{
+        text-decoration: none;
+        color: #fff;
+    }
+    .p-liens li:hover{
+        background: #a6d6c3;
+        color:#fff;
+    }
+    a{
+        text-decoration: none;
+    }
+        /* fin liens */
+        /* debut menu */
+    .menu{
+        display: flex;  
+        justify-content: space-evenly;
+        list-style: none;
+        }
+        .menu li{
+            border-radius: 10px opx;
+            border: 3px solid #fff;
+            padding: 2px 10px;
+            text-align: center;
+        }
+        .menu li:hover{
+            background: #a6d6c3;
+            color:#fff;
+        }
+        /* fin menu */
+        /* debut menu deroulant */
+.md {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+.md li{
+    background: #2980b9;
+    border: 1px solid #fff;
+}
+.md li a{
+   color: #fff;
+   /* padding: 100px; */
+}
+.md li a:hover{
+    background: #a6d6c3;
+}
+.md li .submenu{
+    display: none;
+    list-style: none;
+}
+.md li:hover .submenu{
+    display: block;
+}
+.md li:hover .submenu li{
+    position: relative;
+    /* float: none; */
+}
 
+        /* fin menu deroulant */
+    /* FIN LIENS ET MENU */
+    
 
 
 
