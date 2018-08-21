@@ -1,0 +1,23 @@
+.navbar, .form, .slide, .text, .logo, .copyRight{
+    border: 1px solid black;
+    width: 100vw;    
+    height: 24vh;
+    }
+    .navbar{
+        background: yellow;
+    }
+    .form{
+        background: green;
+    }
+    .slide{
+        background: red;
+    }
+    .text{
+        background: bisque;
+    }
+    .logo{
+        background: orange;
+    }
+    .copyRight{
+        background: purple;
+    }

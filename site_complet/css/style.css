@@ -1,7 +1,7 @@
 *{
     box-sizing: border-box;
 }
-/* NORMALIZE */
+/************************ NORMALIZE ************************/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, 
 p, blockquote, pre, a, abbr, acronym, address, 
@@ -20,7 +20,7 @@ output, ruby, section, summary, time, mark, audio, video{
     font: inherit;
     vertical-align: baseline;
 }
-/* REGLAGES GENERAUX*/
+/********************** REGLAGES GENERAUX**********************/
 body{
     background-image: url(../img/mekong-green.png);
     scroll-behavior: smooth; /* effet de scroll quand on clique sur une ancre - ne marche que sur Firefox, Chrome et Opera dernieres versions */
@@ -56,7 +56,7 @@ blockquote{
 strong{
     font-weight: bold; /* EMMET => fwb + tab */
 }
-/* -----------------HEADER------------------- */
+/*************************** HEADER************************** */
 header{
     background: #2c3e50;
     height: 175px; /*EMMET => h175 + tab */
@@ -101,14 +101,16 @@ header a{
 nav{
     background: #2980b9;
     height: 70px;
-    border-bottom: 8 px solid #6acafc;
+    border-bottom: 8px solid #6acafc;
     text-align: center;
     padding: 15px;
 }
 nav a{
     margin: 10px;
     padding: 2px 10px;
-    border-radius: 10px opx;
+    border-radius: 10px 0px;
+    border-bottom-right-radius: 16%;
+    border-top-left-radius: 16%;
     border: 2px solid #fff;
     background: #6acafc;
     color: #2c3e50;
@@ -182,9 +184,9 @@ footer{
     font-size: 30px;
     font-style: italic;    
 }
-/*----------- FIN PAGE STRUCTURE---------- */
+/********************* FIN PAGE STRUCTURE *********************/
 
-/* -----------DEBUT IMAGE------------- */
+/************** DEBUT IMAGE **********************************/
 .imgCss{
     background-image: url('../img/fond.jpg');
     height: 67vh;
@@ -285,9 +287,9 @@ footer{
     transition-duration: 1s;
 } */
 
-/* -----------FIN PAGE IMAGE------------- */
+/*********************** FIN PAGE IMAGE ***********************/
 
-/* -----------BOUTON TOP------------- */
+/*********************** BOUTON TOP ***********************/
 button{
     position:fixed;
     bottom: 40px;
@@ -298,8 +300,8 @@ button{
     font-size: 250%;
     color: rgba(151, 216, 178, 0.5);
 }
-/* -----------FIN BOUTON TOP------------- */
-/* ----------- PAGE POSITION ------------------ */
+/********************** FIN BOUTON TOP **********************/
+/******************* DEBUT  PAGE POSITION  *******************/
 
 
 
@@ -358,8 +360,8 @@ button{
     color: #F6E1B5;
     font-weight: bold;
 }
-/* ----------- FIN POSITION ------------------ */
-/* ----------- PAGE ZONING ------------------ */
+/***********************  FIN PAGE POSITION ******************/
+/*********************** DEBUT PAGE ZONING ********************/
 
 /* zonig 1 */
 .zone1{
@@ -612,8 +614,8 @@ button{
         height: 35px;
         width: 793px;
     }
-    /* zoning 7 */
-    .zone7{
+     /* zoning 7 */
+     .zone7{
         border: 1px solid;
         height: 637px;
         width: 795px;
@@ -640,20 +642,102 @@ button{
             top: 7px;
             left: 8px;
         }
+        .z7-1, .z7-2, .z7-3, .z7-4,.z7-5{
+            border: 1px solid black;
+            position: relative;
+            background: purple;
+        } 
+        .z7-1{
+            height: 10vh;
+            width: 10vw;
+           
+        } 
+        .z7-2{
+            width: 10vw;
+            height: 10vh;
+           
+        } 
+        .z7-3{
+            height: 10vh;
+            width: 7vw;
+                        
+           
+        } 
+        .z7-4{
+            height: 10vh;
+            width: 8vw;
+                        
+           
+        } 
+       .z7-5{
+            height: 10vh;
+            width: 19vw;
+                
+       
+        } 
+        .z7-6{
+            background: aquamarine;
+            height: 10vh;
+            width: 19vw;
+                        
+            
+        }
 
-/* ----- DEBUT TABLEAU -------- */
+/******************** DEBUT PAGE TABLEAU ********************/
 table{
     margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
 }
 .date{
     background: #d0e3fa;
 }
-/* ----- FIN TABLEAU -------- */
+th, tfoot, tbody, tr,td{
+    border: 1px solid #6a5acd;
+}
+th,td, tr{
+    width: 11vw;
+}
+.compagnie td:first-child, .compagnie2 td:first-child{
+    position: relative;
+    top: 2vh;
+}
+/********************* FIN PAGE TABLEAU  *********************/
 
-/* DEBUT LISTE */
+/********************** DEBUT PAGE LISTE **********************/
 
-/* FIN LISTE */
-/* DEBUT LIENS ET MENU */
+    /* debur liste ul */
+.l1{
+    display: flex; 
+    list-style:none;
+}
+.l1 li{
+    margin: 1vw;
+}
+li .fas{
+    font-size: 90ù;
+    color: blue;
+}
+li .fas:hover{
+    font-size: 150%;
+    color: darkred;
+}
+/* fin liste ul */
+/* debut liste imbriquées */
+.li{
+    position: relative;
+    left: 4vw;
+    list-style: disclosure-closed;
+    }
+    .li .liA, .li .liB{
+        position: relative;
+        left: 2vw;
+        list-style: lower-alpha;
+    }
+/* fin liste imbriquées */
+
+/*********************** FIN PAGE LISTE ***********************/
+/***************** DEBUT  PAGE LIENS ET MENU *****************/
     /* debut liens */
     .p-liens{
         display: flex;
@@ -685,28 +769,34 @@ table{
     }
         /* fin liens */
         /* debut menu */
-    .menu{
-        display: flex;  
-        justify-content: space-evenly;
-        list-style: none;
-        }
-        .menu li{
-            border-radius: 10px opx;
-            border: 3px solid #fff;
-            padding: 2px 10px;
-            text-align: center;
-        }
-        .menu li:hover{
-            background: #a6d6c3;
-            color:#fff;
-        }
+.menu{
+    display: flex;  
+    justify-content: space-evenly;
+    list-style: none;
+    }
+.menu li{
+    background: #2980b9;
+    border-radius: 10px opx;
+    border: 3px solid #fff;
+    padding: 2px 10px;
+    text-align: center;
+    }
+    .menu li:hover{
+        background: #a6d6c3;
+        color:#fff;
+    }
+.menu li a{
+    border-bottom-right-radius: 16%;
+    border-top-left-radius: 16%;
+}
         /* fin menu */
         /* debut menu deroulant */
 .md {
     padding: 0;
     margin: 0;
-    display: flex;
-    justify-content: space-evenly;
+     display: flex;
+    justify-content: space-evenly; 
+    /* float: left; */
     list-style: none;
 }
 .md li{
@@ -720,21 +810,313 @@ table{
 .md li a:hover{
     background: #a6d6c3;
 }
-.md li .submenu{
+.md li .child-list{
     display: none;
     list-style: none;
 }
-.md li:hover .submenu{
+ .md li:hover .child-list{
+     position: absolute;
+    display: inline-block;
+    /* z-index: 10000; */
+    } 
+    .child-list#nth1{
+        left: 39vw;
+        top: 81vh;
+    }
+    .child-list#nth2{
+        left: 49vw;
+        top: 81vh;
+    }
+    .child-list#nth3{
+        left: 58.2vw;
+        top: 81vh;
+    }
+    .child-list#nth4{
+        left: 66vw;
+        top: 81vh;
+    } 
+.md li:hover .child-list li{
     display: block;
 }
-.md li:hover .submenu li{
+        /* fin menu deroulant */
+/* FIN  PAGE LIENS ET MENU */
+/* DEBUT  PAGE FORMULAIRE */
+#form{
+    background: #2c3e50;
+    border-radius: 2%;
+    height: 50vh;
+    width: 37vw;
+    margin: 0 auto;
+    padding: 4%;
+}
+label{
+    color: #fff;
+}
+ input{
     position: relative;
-    /* float: none; */
+    }
+    #pseudo{
+        left: 49%;
+    }
+    #prenom{
+        left: 49.6%;
+    }
+    #mdp{
+        left: 42.2%;
+    }
+    #email{
+        left: 51.2%;
+    }
+    #file{
+        left: 55.6%;
+        color: #fff;
+    }
+    #cp{
+        left: 42.6%;
+    }
+#checkbox{
+    color: #fff;
+}
+textarea{
+    left: 48.6%;
+    position: relative;
+}
+#send, #reset{
+    top: 6vh;
+}
+/******************* FIN  PAGE FORMULAIRE *******************/
+/******************* DEBUT PAGE MULTIMEDIA *******************/
+    /* debut video enfond */   
+    .videoFond{
+    padding-left: 0;
+    padding-right: 0;
+}
+.videoFond video{
+    position: absolute;
+    z-index: 1;/* ordre de superposition des éléments sur l'axe vertical, ne fonction que sur un élément au quel on a appliqué la propriété "position(relative/fixe ou absolute)"*/
+    width: 100%;
+}
+.videoTexte{
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+.videoFond p{
+    position: absolute;
+    z-index: 2;/*il sera positionné au-dessus de la vidéos*/
+    width: 500px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.60);
+    left: 250px;
+    top: 150px;
+    padding: 20px;
+    font-size: 120%;
+    border-radius: 10px;
+}
+    /* fin video en fond */
+    /* debut video youtube */
+iframe[src="https://www.youtube.com/embed/MHYWgf3VqoY"]{
+        width: 100%;
+}
+    /* fin video youtube */
+    /* debut audio map */
+.audio{
+    text-align: center;
+}
+    /* fin audiomap */
+    /* debut googlemap */
+    iframe[src= "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2621.238915598064!2d2.2824175160303923!3d48.929891079294464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66f57b7711df3%3A0x74333e5944e77045!2sBoulevard+Pierre+de+Coubertin%2C+92230+Gennevilliers!5e0!3m2!1sfr!2sfr!4v1501487598830"]{
+    width: 100%;   
+    }
+    /* fin googlemap */
+/********************** FIN PAGE MULTIMEDIA*******************/
+/******************** DEBUT PAGE ANIMATION ********************/
+    /* debut infobulle */
+.infoBulle{
+    height: 250px;
+    width: 500px;
+    margin: auto;
+    padding-top: 15px;
+    background: #444;
+    box-shadow: 0 0 50px #222 inset; /* inset place l"ombre à l'intérieur*/;
+}
+.infoBulle p{
+    text-align: center;
+    padding-top: 30px;
+}
+.infoBulle a{
+    color: #ccc;
+    text-shadow: 0 -2px 0 black;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 5px 15px;
+}
+.infoBulle a:hover{
+    text-shadow: 0 1px 2px black;
+    background: rgba(0,0,0,.4);/*.4 = 0.4*/
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .4);
+    color: #fff;
+}
+.infoBulle a span{
+    position: absolute;
+    padding: 15px;
+    margin-top: 23px;
+    margin-left: -35px;
+    background: rgba(0, 0, 0, .9);
+    opacity: 0;
+    color: #09c;
+    transform: scale(0) rotatez(-12deg); /*rotation sur l'axe vertical https://developper.mozilla.org/fr/docs/web/CSS/transform-function/rotatez  
+    scale() => echelle / taille du zoom*/
+    transition: .25s;
+    border-radius: 3px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .5);
+
+}
+.infoBulle a:hover span{
+    opacity: 1;
+    transform: scale(1) rotatez(0);
+}
+.infoBulle a span:before{/*:before => on injecte qq chose avant*/
+    content:'';
+    position: absolute;
+    top: -6px;
+    left: 10px;
+    border-bottom: 6px solid rgba(0, 0, 0, .9);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+}
+    /* fin infobulle */
+    /* debut effet survol */
+/* 
+Image en gris(grayscale) et floute(blur) */
+.imgEffets{
+    width: 302px;
+    height: 320px;
+    margin: 70px auto;
+}
+.imgEffets li{
+    list-style: none;
+    float: left;
+    width: 141px;
+    height: 150px;
+    margin: 5px;
+}
+.imgEffets img{
+    position: absolute;/*EMMET psa +tab*/
+    z-index: 1;
+    height: 150px;
+    box-shadow: 0 0 3px black;
+    transition: .5s cubic-bezier(0, 3, .4, 1);/*cubic-bézier commence par  0 et se termine par 1 puis entre nous mettons nos valeurs (http://cubic-bezier.com)*/
+}
+.imgEffets li:hover img{/* effet au survol*/
+    z-index: 2;
+    transform: scale(1.5);
+    box-shadow: 0 0 10px black;
+}
+.imgEffets:hover li:not(:hover) img{
+    filter: grayscale(1) blur(5px);
+}
+    /* fin effet survol */
+    /* debut Rotation d'un menu en CSS */
+#menuRotate{
+    height: 360px;
+    width: 576px;
+    margin: 100px auto;
+    background: #627878;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid white;   
+}
+#menuRotate .masque{
+    position: absolute;
+    z-index: 50;
+    width: 585px;
+    height: 135px;
+    top: 0;
+    left: 0;
+    background: linear-gradient(#324040, #627878);
+}
+#menuRotate .ombre{
+    position: absolute;
+    z-index: 40;
+    width: 300px;
+    height: 6px;
+    box-shadow: 0px 100px 3px black;
+    border-radius: 75px 75px 75px 75px /3px 3px 3px 3px;/* rayons horizontaux/ verticaux*/ 
+    top: 30px;
+    left: 142px;
+}
+#menuRotate dl{
+    position: relative;
+    top: 0;
+    left: 50%;
+    margin-left: -75px;
+    width: 150px;
+    height: 155px;
+    color: #324040; 
+    text-align: center;
+    background: #04b3d2;    
+    border-radius: 4px; 
+    box-shadow: 0 0 6px rgba(0, 0, 0, .7);
+    transform-origin: 50% 120px;
+    animation: bounceOut 0.7s ease-in-out;
+}
+#menuRotate dt{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 28px;
+    padding-top: 5px;
+}
+#menuRotate dd{
+    transform: rotate(180deg);
+}
+#menuRotate dd a{
+    display: block;
+    height: 24px;
+    padding: 3px 0;
+    color: #324040;
+    text-decoration: none;
+}
+#menuRotate dd a:hover{
+    background: rgba(151, 216, 178, 0.1);
+}
+#menuRotate dl:hover{
+    transform: rotate(-180deg);
+    animation: bounceIn 0.7s ease-in-out;
+}
+/* Les keyframes représentent le déroulement de votre animation. Les valeurs en pourcentage représentent un moment temporel précis au cours de la durée de votre animation. Ainsi 10% représentera le 6ème seconde d'une animation durant une minute. Les keyframes 0% et 100% sont obligatoires et que leur omission empêchera le fonctionnement de votre animation sur certain navigateur */
+@keyframes bounceIn{
+    from{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(-200deg);
+    }
+    90%{
+        transform: rotate(-175deg);
+    }
+    to{
+        transform: rotate(-180deg);
+    }
+}
+@keyframes bounceOut{
+    from{
+        transform: rotate(0deg);
+    }
+    0%{
+        transform: rotate(-180deg);
+    }
+    10%{
+        transform: rotate(-180deg);
+    }
+    to{
+        transform: rotate(-360deg);
+    }
 }
 
-        /* fin menu deroulant */
-    /* FIN LIENS ET MENU */
-    
+    /* fin Rotation d'un menu en CSS */
+/********************* FIN PAGE ANIMATION *********************/
 
 
 

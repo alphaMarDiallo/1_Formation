@@ -57,9 +57,36 @@
         <a href="animation.html"  >Animation</a>
     </nav>
     <main>
+        <h2>formulaire</h2>
+        <section class="form">
+            <form action="#" id="form">
+                    <label for="pseudo">Pseudo*</label>
+                    <input type="text" name="pseudo" id="pseudo" placeholder="votre pseudo" required><br>
+                    <label for="prenom">Prénom</label>
+                    <input type="text" name="prenom" id="prenom" placeholder="votre prénom" required><br>
+                    <label for="mdp">Mot de passe</label>
+                    <input type="text" name="mdp" id="mdp" placeholder="Mot de passe" required><br>
+                    <label for="email">Email*</label>
+                    <input type="text" name="email" id="email" placeholder="votre@email.fr" required><br>
+                    <label for="file">CV</label>
+                    <input type="file" id="file"><br>
+                   <label for="fruits">Quel sont vos fruits préférés ?</label>
+                   <p id="checkbox">
+                       <input type="checkbox" checked>Orange
+                       <input type="checkbox">Fraise
+                       <input type="checkbox">Poire
+                   </p><br>
+                   <label for="cp">Code postale</label>
+                   <input type="textaera" id="cp" class="cp" maxlength="5" pattern="[0-9]{5} "><br>
+                   <label for="msg">Message</label>
+                   <textarea type="range" rox="15" cols="25" row="10"></textarea><br>
+                   <input type="button" name="send" id="send" value="Envoyer">
+                   <input type="button" name="reset" id="reset" value="Annuler">
+            </form>
+        </section>
 
-        </main>
-        <footer>           
-        </footer>
+    </main>
+    <footer>           
+    </footer>
     </body>
     </html>
