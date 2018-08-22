@@ -150,7 +150,8 @@ var receipes = [
         plate: 8,
         starRating: 4.98462123,
         photoUrl: 'https://www.monlien.fr/verslaphoto.jpg',
-        videoUrl: 'https://www.monlien.fr/verslavideo.mp4',        cooking: {
+        videoUrl: 'https://www.monlien.fr/verslavideo.mp4',        
+        cooking: {
             preparation: '30min',
             time: '',
             temp: ''
