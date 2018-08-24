@@ -73,8 +73,9 @@ var PremierTrimestre = [
 
 
 var tableau = PremierTrimestre.length;
-
-// affiche les élèves:
+var sommes = 0;
+var rowCount = 0;
+// affiche les élèves en parcourant le tableau:
 document.write("<ol>");
 for(let i = 0; i < tableau; i++){
     document.write("<li>"+PremierTrimestre[i].prenom+' '+PremierTrimestre[i].nom +"</li>");
@@ -85,10 +86,59 @@ for(let i = 0; i < tableau; i++){
     for (let matiere in PremierTrimestre[i].moyenne) {
         // document.write("<li>");
         document.write("<li>"+matiere+' '+PremierTrimestre[i].moyenne[matiere] +"</li>");
-        
-        // document.write("</li>"); 
-        console.log(PremierTrimestre[i].moyenne);   
+        // on conte les tours => ??????
+        rowCount++;
+        // on addition les notes :
+        sommes += PremierTrimestre[i].moyenne[matiere];
     }
+    // on effectue l'opération pour optenir la moyenne générale :
+    document.write("<li style=list-style:none><strong> Moyenne général : "+ ' '+(sommes / rowCount).toFixed(2) +"<strong></li>");
     document.write("</ul>");
 }
 document.write("</ol>");
+
+/*                      CORRECTION
+// -- Les Flémards.js  
+w = e => document.write(e); 
+l = e => console.log(e);
+
+// -- 1. Je souhaite afficher la liste de mes étudiants.
+w('<ol>');
+    for ( let i = 0 ; i < PremierTrimestre.length ; i++ ) {
+
+        // -- Vérification dans la console
+        console.log(PremierTrimestre[i]);
+
+        // -- 2. Afficher les étudiants sur ma page
+        let etudiant = PremierTrimestre[i];
+        w('<li>');
+            
+            w(etudiant.prenom + " " + etudiant.nom);
+            
+            var nombreDeMatiere = 0, sommeDesNotes = 0;
+
+            // -- 3. Afficher la moyenne obtenu par mon etudiant a chaque matiere
+            w('<ul>');
+                for( let matiere in etudiant.moyenne ) {
+
+
+                    nombreDeMatiere++;
+                    sommeDesNotes += etudiant.moyenne[matiere];       
+
+                    // -- Affichage sur la page
+                    w('<li>');
+                        w(matiere + " : " + etudiant.moyenne[matiere]);
+                    w('</li>');
+
+                }
+                w('<li>');
+                    w('<strong>Moyenne Générale :</strong>' + ( sommeDesNotes / nombreDeMatiere ).toFixed(2) );
+                w('</li>');
+
+            w('</ul>');
+            l('------');
+
+        w('</li><br>');
+    }
+w('</ol>');
+*/
