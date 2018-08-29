@@ -1,32 +1,30 @@
  $(function(){
+    function validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test("#email");
+    }
 
-    $('#contact').on('submit',function(e){
+    
+    $("#contact").on("submit",function(e){
         e.preventDefault();
 
-        $('#contact .is-invalid').removeClass('is-invalid');
-        $('#contact .is-valid').removeClass('is-valid');
+        if($("#nom").val() === ""){
+            $("<div class='is-invalid' style='color:red'>Veuillez renseigner le champ</div>").insertAfter("#nom");
+        } else {
 
-        const nom           = $('#nom');
-        const prenom        = $('#prenom');
-        const email         = $('#email');
-        const tel           = $('#tel');
-        const LesContacts   = $('#LesContacts');
-
-        // console.log(LesContacts);
-
-        if ( nom.val().length === 0) {
-            nom.addClass('is-invalid');    
-        }else {
-            nom.addClass('is-valid');
+            $("<div class='is-valid' style='color:green'>Enregistrée</div>").insertAfter("#nom");
         }
-     
-
-        // for(let i = 0; i < LesContacts.length; i++){
-
-           
-        // }
-
-
+        if($("#prenom").val() === ""){
+            $("<div class='is-invalid' style='color:red'>Veuillez renseigner le champ</div>").insertAfter("#prenom");
+        }
+        if($("#email").val() === ""){
+            $("<div class='is-invalid' style='color:red'>Veuillez renseigner le champ</div>").insertAfter("#email");
+        } 
+        
+        if($("#tel").val() === ""){
+            $("<div class='is-invalid' style='color:red'>Veuillez renseigner le champ</div>").insertAfter("#tel");
+        } 
+                
 
     });
  });
