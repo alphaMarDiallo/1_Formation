@@ -30,6 +30,9 @@ INSERT INTO nom_de_la_table (
 
 -- Afficher toutes les tables
 SHOW TABLES;
+
+--Utiliser une table existante après la connextion à la BDD 
+USE nom_de _la_table;
 -- Séléctionné toutes les données d'une table
 SELECT * FROM nom_de_la_table;
 -- Séléctionné les données d'une ou pllusieurs colonnes spécifique d'une table
