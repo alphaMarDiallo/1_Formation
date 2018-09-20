@@ -14,7 +14,7 @@ SELECT first_name, last_name FROM employees WHERE gender = 'F';
  -- AFFIcher toute les salariées embauché aven 1980-01-01 :
  SELECT last_name, first_name FROM employees WHERE gender ='F' AND hire_date <='1980-01-01';
 -- Supprimer tous les salariés en CDI :
-DELETE FROM employees AS e INNER JOIN  dept_emp AS d ON e.emp_no = d.emp_no INNER JOIN salaries AS s ON d.emp_no = s.emp_no INNER JOIN titles AS t ON s.emp_no = t.emp_no INNER JOIN dept_manager AS dm ON t.emp_no = dm.emp_no WHERE t.to_date ='9999-01-01';
+DELETE dept_emp FROM dept_emp LEFT JOIN employees ON (dept_emp.emp_no = employees.emp_no) WHERE  dept_emp.to_date = '9999-01-01';
 -- Afficher salariés pour chaque département(pas de doublon):
 SELECT DISTINCT first_name, last_name, dept_name FROM employees AS e, departments AS d, dept_emp AS p WHERE e.emp_no = p.emp_no AND d.dept_no = p.dept_no;
 -- Afficher manager pour chaque département (pas de doublon) :
