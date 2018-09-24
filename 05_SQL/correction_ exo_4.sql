@@ -115,7 +115,9 @@ CREATE TABLE manger (
 	id_stagiaire INT(11),
 	id_bonbon INT(11),
 	date_manger DATE NOT NULL,
-	quantite INT(11) NOT NULL
+	quantite INT(11) NOT NULL,
+    FOREIGN KEY (id_bonbon) REFERENCES bonbon (id_bonbon) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_stagiaire) REFERENCES stagiaires (id_stagiaire) ON DELETE CASCADE ON UPDATE CASCADE
 );
 --8--
 /**
@@ -242,4 +244,12 @@ SELECT prenom, MAX(quantite) FROM stagiaire AS s, manger AS m WHERE s.id_stagiai
 -- OU
 SELECT s.prenom FROM stagiaire s LEFT JOIN manger m ON s.id_stagiaire = m.id_stagiaire WHERE m.quantite = (SELECT MAX(quantite) FROM manger);
 --51-- Aller chercher 1 référence dans 2 tables distinctes
-SELECT * FROM nom_de_la-table_1 WHERE condition UNION ALL SELECT * from nom_de_la-table_2 WHERE condition;
+SELECT * FROM nom_de_la_table_1 WHERE condition UNION ALL SELECT * from nom_de_la_table_2 WHERE condition;
+
+-- AJOUT DE CLEF ETRANGERE :
+ALTER TABLE `manger`
+ ADD PRIMARY KEY (`id_manger`),
+ ADD FOREIGN KEY `id_bonbon` (`id_bonbon`),
+ ADD FOREIGN KEY `id_stagiaire` (`id_stagiaire`);
+
+ SELECT prenom, nom FROM stagiaires s INNER JOIN manger m  ON s.id_stagiaire = m.id_stagiaire INNER JOIN bonbons b ON b.id_bonbon = m.id_bonbon;
