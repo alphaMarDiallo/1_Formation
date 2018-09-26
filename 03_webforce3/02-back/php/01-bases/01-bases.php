@@ -363,3 +363,298 @@ echo '<br>';
 // die() et exit()
 //exit('un message'); // quitte le script après avoir affiché le message.
 //die('un message'); // fait la même chose : die() est un alias de exit().
+
+//--------------------------------------------------------
+echo '<h2> --- Les fonctions  utilisateur --- </h2>';
+//--------------------------------------------------------
+
+// Les fonctions sont des morceaux de code encapsulé dans des accolades et portant un nom, qu'on appelle au besoin pour exécuter le code  qui s'y trouve.
+
+// Déclaration d'une fonction : 
+function separation()
+{// déclaration d'une fonction sans paramètre
+    echo '<hr>';
+}
+
+// Appel de la fonction : 
+separation(); // on appel une fonction en écrivant son nom suivi d'une paire de ().
+
+//-------
+// Fonction avec parametre et return : 
+function bonjour($qui)
+{ // $qui apparaît ici pour la première fois : il permet de recevoir un argument, il s'agit d'une variable de reception. Notez que l'on peut mettre plusieurs ^parametres dans les parenthèses séparés par une virgule
+    return 'Bonjour ' . $qui . '<br>';// return renvoie le string qui le suit à l'endroit ou est appelé la fonction.
+    echo 'cette ligne ne sera pas exécutée car après un return !';
+}
+
+echo bonjour('Alpha'); // si une fonction attend un argument, il faut lui envoyer
+
+//--------------------------------------------------------
+echo '<h2> *** EXERCICE ***</h2>';
+//--------------------------------------------------------
+
+function appliqueTva($nombre)
+{
+    return $nombre * 1.2;
+}
+
+// Ecrire une fonctionTva2 qui calcule un nombre multiplié par un taux donnés lors de l'appel de la fonction : 
+
+function appliqueTva2($nb, $taux)
+{ // on peut initialiser par défaut un paramètre dans le cas ou on ne recoit pas de valeur en argument lors de l'appel de la fonction. On a renommé notre fonction car on ne peut pas déclarer deuc fonction qui porte le même nom.
+    return $nb * $taux;
+}
+echo appliqueTva2(500, 0.5) . ' <br>';
+
+//------
+// Exercice :
+function meteo($saison)
+{
+    echo "Nous somme en $saison . <br>";
+}
+
+meteo('automne');
+meteo('printemps');
+
+// Au sein d'une nouvelle fonction, exoMetéo, afficher l'article au ou en selon la saison (en été, en hiver, en automne, au printemps).
+
+function exoMeteo($saison)
+{
+    if ($saison === 'été' || $saison === 'automne' || $saison === 'hiver') {
+        echo "Nous sommes en  $saison ! .<br>";
+    } else {
+        echo "Nous sommes au  $saison ! .<br>";
+    }
+}
+exoMeteo('printemps');
+
+/*
+CORECTION : 
+ */
+function exoMeteo2($saison)
+{
+
+    if ($saison === 'printemps') {
+        $article = 'au';
+    } else {
+        $article = 'en';
+    }
+
+    echo "Nous sommes $article $saison <br>";
+}
+exoMeteo2('hiver');
+exoMeteo2('printemps');
+
+//----
+// Variables locales et variables  globales :
+
+// De l'espace local à l'espace global :
+function jourSemaine()
+{
+    $jour = 'mardi'; // variable local à la fonction
+    return $jour . '<br>'; // return permetr de sortir une valeur de la fonction 
+}
+ // echo $jour; // erreur car cette variable n'est connue qu'a l'interieur de la fonction
+echo jourSemaine(); //  On récupère ici la valeur 'mardi' grâce au return qui se situe dans la fonction.
+
+// De l'espace global à l'espace local :
+
+$pays = 'France'; // variable global
+
+function affichePays()
+{
+    global $pays; // le mot clef global permet de récupérer une variable global au sein de l'espace local de la fonction
+    echo $pays . '<br>'; // affiche France
+}
+affichePays();
+
+//--------------------------------------------------------
+echo '<h2> Structures itératives : les boucles </h2>';
+//--------------------------------------------------------
+
+// Les boucles sont destinées à répéter des lignes de code de façon automatique.
+
+// Boucle while : 
+
+$i = 0; // valeur de départ de la boucle
+
+while ($i < 3) { // Tant que $i est inferieur à 3, nous entrons dans la boucle
+    echo " $i---"; // Affiche 0,1,2
+    $i++; // On oublie pas d'incrémenter à chaque tour de boucle pour ne pas avoir une boucle infinie
+}
+ // Note : pas de ";" à la fin des structures itératives.
+echo "<br>";
+
+//----
+// Exercice : à l'aide d'une boucle while, afficher dans un selecteur les années de 1918 à 2018.
+
+echo '<select>';
+echo '<option>1</option>';
+echo '<option>2</option>';
+echo '<option>3</option>';
+echo '</select><br>';
+echo '<br>';
+$i = 1918;
+echo '<select>';
+while ($i < 2019) {
+    //echo "<option>$i</option> ";
+    echo '<option>' . $i . '</option>';
+    $i++;
+}
+echo '</select><br>';
+// CORRECTION :
+echo '<br>';
+$i = date('Y') - 100; // date() fournit la date du jour au format indiqué, ici 'Y'  pour year quatre chiffres 
+echo '<select>';
+while ($i <= date('Y')) {
+    //echo "<option>$i</option> ";
+    echo '<option>' . $i . '</option>';
+    $i++;
+}
+echo '</select><br>';
+echo '<br>';
+$i = 2018;
+echo '<select>';
+while ($i > 1917) {
+    echo "<option>$i</option> ";
+    $i--;
+}
+echo '</select><br>';
+echo '<br>';
+// Boucle do while :
+// La boucle do while a la particularité de s'exécuter au moins une fois (correspondant à "do"), puis tant que la condition while est vraie.
+
+$j = 1;
+do {
+    echo 'Je fais un tour de boucle <br>';
+    $j++;
+} while ($j > 10); // la condition renvoie false ici, pourtant la boucle à bien tourné une fois. Attention au ";" après le while de cette boucle
+//Exemple d'utilisattion : poser une question à l'internaute avec le "do" puis tant qu'il n'a pas répondu avec le "while".
+echo '<br>';
+
+// Boucle for :
+// La boucle for est une autre syntaxe de la boucle while.
+for ($i = 0; $i < 10; $i++) { // on trouve dans les parenthèses du for : valeur de départ; condition d'entrée dans la boucle; variation de $i(incrémentation, décrémentation ou autre)
+    echo $i . '<br>';// affiche 0 à 9 en 10 tours
+}
+
+// Rappel si l'on veut faire varier $i  de 10 en 10, on écrit $i += 10 à la place de $i++.
+
+// Exercice : afficher 12 <option> de 1 à 12 à l'aide d'une boucle for.
+echo '<select>';
+for ($i = 1; $i < 13; $i++) {
+    echo '<option>' . $i . '</option>';
+}
+echo '</select>';
+echo '<br>';
+//-----
+// Boucle foreach : 
+// Il existe aussi la boucle foreach pour parcourir les arrays et les objets. Nous la verrons dans un prochain chapitre
+
+//------
+// Exercice :  afficher avec une boucle for les chiffres de 0 à 9 dans une table HTML
+echo '<table border="1">';
+echo '<tr>';
+for ($i = 0; $i < 10; $i++) {
+    echo '<td>' . $i . '<td>';
+}
+echo '</tr>';
+echo '</table>';
+echo '<hr>';
+echo '<br>';
+// EXercice : Faite une boucle for qui affiche 0 à  9 sur une ligne, répéter sur 10 ligne, dans une table HTML
+echo '<table border="1">';
+echo '<tr>';
+for ($i = 0; $i < 10; $i++) {
+    echo '<tr>';
+    for ($j = 0; $j < 10; $j++) {
+        echo '<td>' . $j . '<td>';
+    }
+    echo '</tr>';
+}
+echo '</table>'; // nous avons ici le principe des boucles imbriquées. Quand la 1ère boucle fait 1 tour, la boucle interieur en fait 10.
+
+//--------------------------------------------------------
+echo '<h2> Les tableaux ou array </h2>';
+//--------------------------------------------------------
+// Un tableau ou array est déclaré comme une variable améliorée dans laquelle on stock une multitude de valeurs. Ces valeurs peuvent être de n'importe quel type. Elles possèdent un indice dont la numérotation par défaut commence à 0.
+
+// Déclaration d'un array (methode 1) :
+
+$liste = array('Grégoire', 'nathalie', 'Emilie', 'François', 'Georges');
+echo 'Le type de $liste est : ' . gettype($liste) . '<br>'; //  affiche le type array
+// echo $liste; // erreur de type "Array to string conversion" car on ne peut pas afficher directement un array avec un echo;
+echo '<pre>';
+var_dump($liste); // affiche le contenu du tableau  plus certaines information comme le type
+echo '</pre>'; // pre est une balise HTML qui permet de formater l'affichage du var_dump
+
+echo '<pre>';
+print_r($liste); // print_r est plus synthétique que var_dump, il n'affiche pas le type des éléments contenus dans l'array
+echo '</pre>';
+
+// fonction d'affichage d'un print_r avec balise  pre :
+function debug($param)
+{
+    echo '<pre>';
+    print_r($param);
+    // var_dump($param);
+    echo '</pre>';
+}
+
+// Autre methode de déclaration d'un array :
+$tab = ['France', 'Italie', 'Espagne', 'Portugal'];
+$tab[] = 'Suisse'; // les crochets vide permettent d'ajouter une valeur à la fin de votre array.
+debug($tab);
+
+// Afficher Italie à partir de notre tableau $tab :
+echo $tab[1] . '<br>';
+
+//-----
+// Tableau associatif : 
+//Un tableau associatif est un tableau dans lequel on choisit la dénomination des indices.
+
+$couleur = array(
+    'j' => 'jaune',
+    'b' => 'bleu',
+    'v' => 'vert'
+);
+// Pour accéder à un élément du tableau associatif :
+echo 'La seconde couleur de notre tableau est le : ' . $couleur['b'] . '<br>';
+echo "La seconde couleur de notre tableau est le :  $couleur[b]<br>"; // Un array écrit dans des guilllemets ous de quotes perd les quotes autour de son indice
+
+//Mesurer la taille d'un array :
+echo 'Taille du tableau $couleur : ' . count($couleur) . '<br>';
+echo 'Taille du tableau $couleur : ' . sizeof($couleur) . '<br>'; // count() et sizeof() font la même chose : ils comptent le nombre d'éléments contenus dans l'array indiqué.
+
+//--------------------------------------------------------
+echo '<h2> Boucle foreach </h2>';
+//--------------------------------------------------------
+
+// La boucle foreach est un moyen simple de passer en revue un tableau ou un objet. Elle retourne une erreur si vous tentez de l'utiliser sur autre chose. 
+debug($tab);
+foreach ($tab as $valeur) { // le mot clef "as" fait parti de la structure syntaxique de la foreach : il est obligatoire. $valeur vient parcourir la colonne des valeurs de l'array. Notez qu'on peut l'appeler comme on veut : c'est sa place après "as" qui détermine qu'elle parcours les valeurs
+    echo $valeur . '<br>'; // on affiche succéssivement les éléments du tableau à chaque tour de boucle. La foreach s'arrête automatiquement à la fin du tableau.
+}
+
+foreach ($tab as $indice => $valeur) { // quand il y a 2 variables après "as", la première parcours la colonne des indices (quelque soit son nom) et la deuxième parcours la colonne des valeur (quelque soit son nom).
+    echo $indice . ' correspond à  ' . $valeur . '<br>';
+}
+
+// Exercice : écrivez un array associatif avec les indice prenom, nom, email et telephone  et mettez y  des information pour une personne. Puis avec une boucle foreach affichez les valeurs dans des paragraphe sauf pour le prénom qui doit être dans un h3.
+
+$user = array(
+    'prenom' => 'Alpha',
+    'nom' => 'DIALLO',
+    'email' => 'alpha.diallo@lepoles.com',
+    'telephone' => '0101010101'
+);
+debug($user);
+
+foreach ($user as $info => $values) {
+    if ($info == 'prenom') {
+
+        echo '<h3>' . $info . ' :  ' . $values . '</h3>';
+    } else {
+        echo '<p> ' . $info . ' :  ' . $values . '</p>';
+    }
+}
