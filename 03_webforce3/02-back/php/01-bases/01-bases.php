@@ -110,9 +110,9 @@ echo CAPITALE . '<br>'; // Affiche Paris
 echo __DIR__ . '<br>'; // Affiche le chemin complet vers le dossier de notre fichier
 echo __FILE__ . '<br>'; // Affiche le chemin complet vers le fichier (dossier  + nom du fichier).
 
-//--------------------------------------------------------
-echo '<h2>  ** Exercice ** </h2>';
-//--------------------------------------------------------
+echo '<hr>';
+echo 'Exercice concatenation :';
+echo '<hr>';
 
 // Vous affichez bleu - blanc - rouge (avec les tirets) en mettant le texte de chaque tirets dans des variable : 
 $couleur1 = 'Bleu ';
@@ -310,9 +310,9 @@ switch ($couleur) {
         echo 'Vous n\'aimez aucune de ces couleurs <br>';
         break;
 }
-//---------------------------------
-echo '<h2> ** EXERCICE ** </h2>';
-//---------------------------------
+echo '<hr>';
+echo 'Exercice  condition :';
+echo '<hr>';
 //Exercice : réécrire le switch précédent en condition if... classique. On doit obtenir le même résultat.
 if ($couleur == 'bleu') {
     echo 'Vous aimez le bleu <br>';
@@ -389,9 +389,9 @@ function bonjour($qui)
 
 echo bonjour('Alpha'); // si une fonction attend un argument, il faut lui envoyer
 
-//--------------------------------------------------------
-echo '<h2> *** EXERCICE ***</h2>';
-//--------------------------------------------------------
+echo '<hr>';
+echo 'Exercice  fonction:';
+echo '<hr>';
 
 function appliqueTva($nombre)
 {
@@ -405,6 +405,7 @@ function appliqueTva2($nb, $taux)
     return $nb * $taux;
 }
 echo appliqueTva2(500, 0.5) . ' <br>';
+
 
 //------
 // Exercice :
@@ -485,6 +486,9 @@ while ($i < 3) { // Tant que $i est inferieur à 3, nous entrons dans la boucle
  // Note : pas de ";" à la fin des structures itératives.
 echo "<br>";
 
+echo '<hr>';
+echo 'Exercice boucle while :';
+echo '<hr>';
 //----
 // Exercice : à l'aide d'une boucle while, afficher dans un selecteur les années de 1918 à 2018.
 
@@ -550,7 +554,9 @@ echo '<br>';
 //-----
 // Boucle foreach : 
 // Il existe aussi la boucle foreach pour parcourir les arrays et les objets. Nous la verrons dans un prochain chapitre
-
+echo '<hr>';
+echo 'Exercice for :';
+echo '<hr>';
 //------
 // Exercice :  afficher avec une boucle for les chiffres de 0 à 9 dans une table HTML
 echo '<table border="1">';
@@ -596,8 +602,8 @@ echo '</pre>';
 function debug($param)
 {
     echo '<pre>';
-    print_r($param);
-    // var_dump($param);
+    // print_r($param);
+    var_dump($param);
     echo '</pre>';
 }
 
@@ -639,7 +645,9 @@ foreach ($tab as $valeur) { // le mot clef "as" fait parti de la structure synta
 foreach ($tab as $indice => $valeur) { // quand il y a 2 variables après "as", la première parcours la colonne des indices (quelque soit son nom) et la deuxième parcours la colonne des valeur (quelque soit son nom).
     echo $indice . ' correspond à  ' . $valeur . '<br>';
 }
-
+echo '<hr>';
+echo 'Exercice foreach :';
+echo '<hr>';
 // Exercice : écrivez un array associatif avec les indice prenom, nom, email et telephone  et mettez y  des information pour une personne. Puis avec une boucle foreach affichez les valeurs dans des paragraphe sauf pour le prénom qui doit être dans un h3.
 
 $user = array(
@@ -658,3 +666,113 @@ foreach ($user as $info => $values) {
         echo '<p> ' . $info . ' :  ' . $values . '</p>';
     }
 }
+
+//--------------------------------------------------------
+echo '<h2> Array multidimensionnel </h2>';
+//--------------------------------------------------------
+
+// Nous parlons de tableau multidimensionnel quand un tableau est contenu dans un autre tableau. Chaque tab leau représente une dimension.
+
+// Création d'un array multidimensionnel : 
+$tab_multi = array(
+    0 => array(
+        'prenom' => 'Julien',
+        'nom' => 'Dupont',
+        'telephone' => '0606060606'
+    ),
+    1 => array(
+        'prenom' => 'Nicolas',
+        'nom' => 'Duran',
+        'telephone' => '0707070707'
+    ),
+    2 => array(
+        'prenom' => 'Pierre',
+        'nom' => 'Dulac'
+    ),
+); // Il est possible de choisir le nom des indices dans cet erray multidimensionnel.
+debug($tab_multi);
+// Acceder à la valeur "Julien" dans cet array
+echo $tab_multi[0]['prenom'] . '<br>'; // Nous entrons d'abord à l'indice 0 de $tab_multi, pour ensuite aller à l'indice ['prenom']dans le sous tableau.
+echo '<hr>';
+echo 'Exercice :';
+echo '<hr>';
+//Parcourir le tableaumultidimensionnel avec une boucle for :
+    // Possible car les indices sont numériques.
+// debug($tab_multi);
+for ($i = 0; $i < count($tab_multi); $i++) {
+    echo $tab_multi[$i]['prenom'] . '<br>';
+}
+echo '<hr>';
+// Exercice : Afficher les 3 prénoms avec une boucle foreach :
+
+foreach ($tab_multi as $index => $items) {
+    echo $items['prenom'] . '<br>';
+}
+echo '<br>';
+foreach ($tab_multi as $items) {
+    echo $items['prenom'] . '<br>';
+}
+echo '<hr>';
+// Afficher toute les valeurs de l'array $tab_multi.
+foreach ($tab_multi as $sous_tableau) {
+    // debug($tab_multi);
+    // debug($sous_tableau);
+    foreach ($sous_tableau as $info) { // $sous_tableau étant lui même un array, on le parcours aussi avec une foreach
+        echo $info . '<br>'; // $info correspond au valeur de sous_tableau
+    }
+    echo '<br>';
+}
+//--------------------------------------------------------
+echo '<h2> Inclusion de fichier </h2>';
+//--------------------------------------------------------
+echo 'Première inclusion : ';
+include 'exemple.inc.php'; // le fichier dont le chemin est spécifier est inclus ici.  En cas d'erreur lors de l'inclusion du fichierinclude génère une erreur de type "warning" et continu l'exécusion du script. 
+echo '<br> ';
+echo 'Deuxième inclusion : ';
+include_once 'exemple.inc.php'; // le once vérifie si le fichier à déjà été inclus (avant), si c'est le cas il ne le ré-inclus pas.
+echo '<br> ';
+echo 'Troisième inclusion : ';
+require 'exemple.inc.php'; // le fichier est "requis" donc OBLIGATOIRE : en cas d'erreur lors de l'inclusion du fichier, require génère une erreur de type "fatal error" et stoppe l'exécution du script.
+echo '<br>';
+echo 'Quatrième inclusion : ';
+require_once 'exemple.inc.php'; // le once vérifie si le fichier à déjà été inclus (avant et après), si c'est le cas il ne le ré-inclus pas.
+
+// Le "inc" dans le nom du fichier inclus est indicatif pour préciser au développeurs qu'il s'agit d'un fichier d'inclusion et donc pas d'une page à part entière. Ce n'est pas obligatoire mais utile.
+//--------------------------------------------------------
+echo '<h2> Gestion des dates </h2>';
+//--------------------------------------------------------
+
+echo date('d/m/Y H:i:s') . '<br>';
+echo date('d-m-Y H/i/s') . '<br>'; // date retourne la date de maintenant selon le format indiqué. d=> jour / m => mois / Y => année sur 4 chiffres / y => année sur 2 chiffres / H => heure sur 24h / h => heure sur 12h / i => minute / s => seconde.
+
+echo date('Y-m-d') . ' date(\' Y - m - d \') <br>'; // on peut changer l'ordre des paramètres ainsi que le séparateur.
+
+//------
+// Le timestamp :
+// Définition : le timestamp est le nombre de seconde écoulé entre une certaine date et le 1 er janvier 1973 à 00:00:00. Cette date correspond à la création du système UNIX.
+// Ce système de timestamp est utilisé par de nombreux langages de programation diont le PHP et le JS. 
+
+//----
+echo time() . ' en timstamp <br>'; // Retourne l'heure actuelle en timestamp.
+
+//----
+//Changer le format d'une date (méthode procédurale):
+$dateJour = strtotime('27-09-2018'); // transforme la date exprimé en string en timestamp.
+echo $dateJour . ' utilisation de strtotime() <br>'; // affiche le timstamp du jour.
+
+var_dump(strtotime('13-13-2018')); // ici retourne false car la date fournie n'est pas valide. Cette fonction permet donc de valider une date.
+echo '<br>';
+$dateFormat = strftime('%Y-%m-%d', $dateJour); // transforme une date donnée en timestamp selon le format indiqué, ici en année-mois-jour
+echo $dateFormat . ' conversion méthode procédural <br>';
+echo '<hr>';
+//----
+// Changer le format d'une date (méthode objet) :
+$date = new DateTime('11-04-2017'); // $date est un objet date qui représente le 11-04-2017.
+echo $date->format('Y-m-d') . ' conversion méthode objet <br>'; //on peut formater cet objet date en appelant sa methode format() et en lui indiquant les paramètres du formate, ici 'Y-m-d'. Affiche '20177-04-11'. 
+
+//--------------------------------------------------------
+echo '<h2> Gestion des dates </h2>';
+//--------------------------------------------------------
+
+
+
