@@ -12,20 +12,24 @@ Le cookie étant sauvegardé sur le poste de l'internaute, il peut être volé o
 
 
 
-print_r($_GET);
+print_r($_GET) . '<br>';
 
 //2-On détermine la langue à afficher dans la variable $langue : 
 if (isset($_GET['langue'])) {
     $langue = $_GET['langue']; // si existe l'indice "langue", c'est que l'on a cliqué sur un lien. On affecte donc sa valeur à la variable $langue. 
 } elseif (isset($_COOKIE['langue'])) {
     $langue = $_COOKIE['langue']; // $_COOKIE est une superglobale, son indice correspond au nom du cookie reçu. Si $_COOKIE['langue'] existe, c'est que l'on a reçu un cookie de nom "langue". On affecte donc sa valeur à la variable $langue.
+
+    // Il n'existe pas de fonction prédéfinit pour supprimer un cookie, dans ce cas on le met à jour avec une date périmé ou à 0 ou encore en ne mettant que le nom du cookie dans les parenthèses de setcookie().
 } else {
     $langue = 'fr'; // Par defaut si l'on a pas cliqué sur un lien et si le cookie langue n'existe pas, on choisit "fr". 
 }
 
 //3- Création du cookie : 
 $un_an = 365 * 24 * 60 * 60; // exprime un an en secondes
-setcookie('langue', $langue, time() + $un_an);// On envoie un cookie chez l'internaute avec un mon ('langue'), une valeur ('$langue'), une date d'expiration exprimé en timestamp (maintenant + 1 an )
+setcookie('langue', $langue, time() + $un_an);// On envoie un cookie chez l'internaute avec un mon ('langue'), une valeur ('$langue'), une date d'expiration exprimé en timestamp (maintenant + 1 an ). 
+
+//stcookie doit se faire avant envoie de tout affichage
 
 //4- Affichage de la langue : 
 
