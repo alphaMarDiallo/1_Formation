@@ -770,9 +770,31 @@ echo '<hr>';
 $date = new DateTime('11-04-2017'); // $date est un objet date qui représente le 11-04-2017.
 echo $date->format('Y-m-d') . ' conversion méthode objet <br>'; //on peut formater cet objet date en appelant sa methode format() et en lui indiquant les paramètres du formate, ici 'Y-m-d'. Affiche '20177-04-11'. 
 
-//--------------------------------------------------------
-echo '<h2> Gestion des dates </h2>';
-//--------------------------------------------------------
+//-------------------------------------------------------
+echo '<h2> Introduction aux objets</h2>';
+//-------------------------------------------------------
+
+// Un objet est un autre type de donnée. Il représente un objet du réel(par exemple : une voiture, un meuble, un personnage, etc...) auquel on peut associer des caractéristiques appelées propriétés (ou attributs), ainsi que des fonctions pour faire des opération appeleées méthode.
+
+// Pour créer un objet, il nous faut un "plan de construction" : c'est le rôle de la classe. Nous créons ici une classe pour fabriquer des objets meubles :
+
+class Meuble
+{ // On met une majuscule au nom des classes
+    public $marque = 'ikea'; // $marque est une propriété. "public" pour dire quelle est accessible à l'exterieur de la classe.
+    public function prix()
+    { // prix est une methode
+        return rand(50, 200); // choicsit un entier aléatoirement entre 50 et 200.
+    }
+} // cette classe est un "plan de construction" d'objet" meuble" qui pourront utiliser la propriété $marque et la méthod prix().
+
+//Puis nous créons une table à partir de cette classe :
+
+$table = new Meuble(); // new est un mot clef qui permet d'instancier la classe meuble pour en faire un objet $table. On dit que "$table" est une instance de "Meuble".
+debug($table); // Affiche le type "object", la classe Meuble dont il vient et sa propriété $marque.
+
+echo 'La marque de ma table est  : ' . $table->marque . ' <br>'; // Pour accéder à la propriété  d'un objet, on écrit l'objet suivi d'une flèche "->" suivi du nom de la propriété sans "$".
+
+echo 'Le prix de ma table est  : ' . $table->prix() . ' € <br>';// Pour accéder à la méthode  d'un objet, on écrit l'objet suivi d'une flèche "->" suivi du nom de la méthode avec une paire de "()".
 
 
-
+//------------------------- FIN DU FICHIER -------------------------------
