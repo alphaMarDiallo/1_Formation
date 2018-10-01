@@ -8,8 +8,17 @@
 //$_POST est une superglobale donc un array, il est disponible dans tous les contexte du script y compris au sein des fonction.
 
 // Syntaxe des $_POST : $_POST = array('name1' => 'valeur input1', 'nameN') => 'valeur inputN')
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";
+echo "<hr>";
 
-
+if (!empty($_POST)) { // si $_POST n'est pas vide, c'est que l'on a reçu des données du formulaire (le formulaire a été soumis)
+    echo 'prenom : ' . $_POST['prenom'] . '<br>';
+    echo 'description : ' . $_POST['description'] . '<br>';//Les indices prenom et description proviennent des "name" du formulaire HTML
+}
+// Pour réinitialiser un formulaire avec le dernier code saisi : on cloque dans l'url + "entrée"
+// Pour répéter la dernière action et donc renvoyer les données du formulaire : F5
 ?>
 
 
@@ -25,6 +34,8 @@
 <body>
 <!-- Un formulaire doit toujours être dans des balises <form> pour fonctionner. Attribut action définit l'url de destination des saisie -->
 <form method="POST" action="#">
+<fieldset style="width: 10vw;">
+<legend>Formulaire 1</legend>
     <label for="prenom">Prénom</label>
     <br>
     <input type="text"  id="prenom" name="prenom">
@@ -35,7 +46,8 @@
     <textarea name="description" id="description" cols="30" rows="10"></textarea>
     <!-- Lees id et le for sont liées : ils permettent de placer le curseur dans l'input quand on clique sur le label-->
     <br>
-    <input type="submit" value="Valider" style="background-color:green; color:#fff;">
+    <input type="submit" value="Envoyer" style="background-color:green; color:#fff;">
 </form>
+</fieldset>
 </body>
 </html>
