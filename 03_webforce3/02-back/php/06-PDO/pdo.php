@@ -223,7 +223,7 @@ $nom = 'sennard';
 // Une requête préparé se réalise en trois étapes : 
 
     // Etape 1 : préparer la requête :
-$resultat = $pdo->prepare("SELECT * FROM employes WHERE nom =  :nom");// :nom est un marqueur nominatif qui est en attente d'une valeur
+$resultat = $pdo->prepare("SELECT * FROM employes WHERE nom = :nom");// :nom est un marqueur nominatif qui est en attente d'une valeur
 
     // Etape 2 : lier les marqueurs aux valeurs : 
 $resultat->bindParam(':nom', $nom); // bindParam() reçcoit exclusivement une variable vers laquelle pointe le marqueur (on ne peut pas y mettre directement une valeurs). Ainsi, si le contenu de la variable change, la valeur du marqueur changera automatiquement (Pas besoin de refaire bindParam).
