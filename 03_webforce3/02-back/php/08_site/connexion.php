@@ -16,7 +16,7 @@ if (internauteEstConnecte()) {
 }
 
 //---------------------------- I TRAITEMENT------------------------------
-debugV($_POST);
+//debugV($_POST);
 if ($_POST) {
     //a-> verifier les champs :
     if (empty($_POST['pseudo'])) { // empty vérifie si c'est vide (0, NULL,'', false ou non defini)
