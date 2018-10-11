@@ -1,10 +1,7 @@
 <?php
-echo '<pre style="background-color: #d5ecd4 ;width: 1Ovw;">';
-echo '<strong>var_dump($param)</strong> <br>';
-var_dump($_GET);
-echo '</pre>';
-//require 'init.inc.php';
-$accueil = $_GET['action'];
+require 'inc/init.inc.php';
+
+$page = $_GET;
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -17,31 +14,17 @@ $accueil = $_GET['action'];
     <!-- CSS de Bootstrap en 1er -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <!-- CSS perso en 2ème -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="lib/css/style.css">
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <style>
-        .carousel-item {
-            max-height:80vh;
-        }
-        .carousel2 .carousel-item {
-            max-height:30vh;
-        }
-        .card-body img{
-            max-height: 30vh;
-        }
-        .nav-item img{
-            max-height:10vh;
-        }
 
-    </style>
 </head>
 <body>
     <!-- .container-fluid-->
    <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg mb-4 fixed-top navbar-light">
             <div class="container">
-                <a class="navbar-brand" href="?action=home"><i class="fab fa-phoenix-framework"></i> Phoenix</a>
+                <a class="navbar-brand" href="?action=accueil"><i class="fab fa-phoenix-framework"></i> Phoenix</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -64,7 +47,8 @@ $accueil = $_GET['action'];
             </div>
         </nav>
     <?php
-if ($accueil === 'home') {?>
+if ($page['action'] === 'accueil') {?>
+
         <!-- carousel -->
         <div class="row">
             <div class="col">
@@ -73,10 +57,16 @@ if ($accueil === 'home') {?>
                         <div class="carousel-item active">
                         <img class="d-block w-100 img-fluid" src="lib/img/caraibes1.jpg" alt="First slide">
                         </div>
-                        <div class="carousel-item">
-                        <img class="d-block w-100 img-fluid" src="lib/img/caraibes.jpg" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
+                        <?php
+$resultat = $pdo->query("SELECT destination, photo FROM voyage");
+    while ($voyage = $resultat->fetch(PDO::FETCH_ASSOC)) {
+
+        echo '<div class="carousel-item">';
+        echo '<img class="d-block w-100 img-fluid" src="' . $voyage['photo'] . '" alt="' . $voyage['destination'] . '">';
+        echo '</div>';
+    }
+    ?>
+                        <!-- <div class="carousel-item">
                         <img class="d-block w-100 img-fluid" src="lib/img/caraibes_martinique_boucaniers.jpg" alt="Second slide">
                         </div>
                         <div class="carousel-item">
@@ -102,7 +92,7 @@ if ($accueil === 'home') {?>
                         </div>
                         <div class="carousel-item">
                         <img class="d-block w-100 img-fluid" src="lib/img/turkoise.jpg" alt="Third slide">
-                        </div>
+                        </div> -->
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -117,101 +107,64 @@ if ($accueil === 'home') {?>
          <!-- FIN carousel -->
         </div>
         <!-- bouton choisir mon séjour -->
-        <a href="?action=choix" class="btn btn-outline-info btn-md" role="button" aria-pressed="true">Choisir mon séjour tout de suite !</a>
-    <?php
-} else if ($_GET['action'] === 'choix') {?>
+        <div class="row">
+            <div class="container">
+                <a href="?action=choix"class="btn btn-outline-info btn-md btn-block mt-3"role="button"aria-pressed="true">Choisir mon séjour tout de suite !</a>
+            </div>
+        </div>
+
+    <?php } else if ($page['action'] === 'choix') {?>
+
         <!-- container -->
         <div class="container">
            <div class="section-card">
                 <div class="container">
                     <!-- CARDS 1 -->
                     <div class="row">
-                        <div class="col">
-                            <div class="card border-info mb-3" style="width: 18rem;">
-                                <img class="card-img-top" src="lib/img/caraibes_martinique_boucaniers.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Les Boucaniers</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="?action=reserver" class="btn btn-outline-info  btn-block">Réservez maintenant !</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card border-info mb-3" style="width: 18rem;">
-                                <img class="card-img-top" src="lib/img/sicile_kamarina.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Kamarina</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="?action=reserver" class="btn btn-outline-info  btn-block">Réservez maintenant !</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card border-info mb-3" style="width: 18rem;">
-                                <img class="card-img-top" src="lib/img/maldives_fino.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Finohlu</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="?action=reserver" class="btn btn-outline-info  btn-block">Réservez maintenant !</a>
-                                </div>
-                            </div>
-                        </div>
-                    <!-- FIN CARDS 1 -->
-                    </div>
-                    <!-- CARDS 2 -->
-                    <div class="row">
-                        <div class="col">
-                            <div class="card border-info mb-3" style="width: 18rem;">
-                                <img class="card-img-top" src="lib/img/maurice_albion.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Albion sauvage</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="?action=reserver" class="btn btn-outline-info  btn-block">Réservez maintenant !</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card border-info mb-3" style="width: 18rem;">
-                                <img class="card-img-top" src="lib/img/maldives_kani.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Kani</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="?action=reserver" class="btn btn-outline-info btn-block">Réservez maintenant !</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card border-info mb-3" style="width: 18rem;">
-                                <img class="card-img-top" src="lib/img/grece_gregolimano.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Gregolimano</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="?action=reserver" class="btn btn-outline-info  btn-block">Réservez maintenant !</a>
-                                </div>
-                            </div>
-                        </div>
-                    <!--  FIN CARDS 2 -->
-                    </div>
+                        <?php
+$resultat = $pdo->query("SELECT * FROM voyage");
+    while ($voyage = $resultat->fetch(PDO::FETCH_ASSOC)) {
+        // debug($voyage);
+        echo ' <div class="col-md-4">';
+        echo ' <div class="card border-info mb-3" style="width: 18rem;">';
+        echo ' <img class="card-img-top" src="' . $voyage['photo'] . '" alt="' . $voyage['destination'] . '">';
+        echo '<div class="card-body">';
+        echo '<h5 class="card-title">Albion sauvage</h5>';
+        echo '<p class ="card-text">' . $voyage['presentation'] . '</p>';
+        echo '<a href="?action=reserver&voyage=' . $voyage['id_voyage'] . '" class="btn btn-outline-info  btn-block">Réservez maintenant !</a>';
+        echo ' </div>';
+        echo '</div>';
+        echo '</div>';
+    }
+    ?>
+
                 </div>
         <!-- FIN .section-cards -->
            <div>
         <!-- FIN .container -->
         </div>
-        <?php
-} else if ($_GET['action'] === 'reserver') {?>
+
+        <?php } else if ($page['action'] === 'reserver' && isset($page['action'])) {?>
+
         <div class="row"> <!-- .row resa & image -->
             <!-- section-resa -->
-                <div class="col-md-4">
-                    <div class="card text-center border-info">
-                        <div class="card-body ">
-                             <img class="card-img-top" src="lib/img/caraibes1.jpg" alt="Card image cap">
-                            <p class="card-text">Caraïbes</p>
-                        </div>
-                        <div class="card-footer text-muted bg-info">
-                            <p class="card-text"> 1 semaine / personne : </p>
-                        </div>
-                    </div>
-                </div>
+                <?php
+$resultat = $pdo->query("SELECT * FROM voyage WHERE id_voyage = $page[voyage] ");
+    while ($reservation = $resultat->fetch(PDO::FETCH_ASSOC)) {
+
+    }
+    echo '<div class="col-md-4">';
+    echo '<div class="card text-center border-info">';
+    echo '<div class="card-body ">';
+    echo '<img class="card-img-top" src="' . $reservation['photo'] . '" alt="' . $reservation['destination'] . '">';
+    echo '<p class="card-text">' . $reservation['destination'] . '</p>';
+    echo '</div>';
+    echo '<div class="card-footer text-muted bg-info">';
+    echo ' <p class="card-text"> 1 semaine / personne : </p>';
+    echo '</div>';
+    echo ' </div>';
+    echo '</div>';
+    ?>
                 <div class="col-md-6">
                 <div class="card border-info">
                     <div class="card-header">
@@ -231,13 +184,14 @@ if ($accueil === 'home') {?>
                                 </div>
                             </div>
                         </form>
-                            <a href="?action=confirmer" class="btn btn-info btn-block">Confirmer ma réservation</a>
+                            <a href="?action=confirmer" class="btn btn-info btn-block mt-3">Confirmer ma réservation</a>
                         </div>
                     </div>
                 </div>
             <!--FIN section-resa -->
-             <?php
-} else if ($_GET['action'] === 'confirmer' || $_GET['action'] === 'payer') {?>
+
+             <?php } else if ($page['action'] === 'confirmer' || $page['action'] === 'payer') {?>
+
             <div class="row"> <!--section image -->
                 <div class="col-md-12">
                     <ul class="nav">
@@ -321,8 +275,7 @@ if ($accueil === 'home') {?>
                 </div>
             </div><!-- FIN .col-md-12-->
         </div><!-- FIN .row confirmation-->
-            <?php
-}?>
+            <?php }?>
         <footer>
             <div class="row mt-4">
                 <div class="col">

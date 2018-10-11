@@ -1,0 +1,16 @@
+ .carousel-item {
+     max-height: 80vh;
+ }
+
+ .carousel2 .carousel-item {
+     max-height: 30vh;
+ }
+
+ .card-body img {
+     max-height: 30vh;
+ }
+
+ .nav-item img {
+     max-height: 10vh;
+ }
+ 
