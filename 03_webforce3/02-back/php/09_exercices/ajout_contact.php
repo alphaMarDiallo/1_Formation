@@ -34,9 +34,9 @@ $pdo = new PDO(
 
 if ($_POST) { // si le formulaire est soumis :
 
-    echo '<pre>';
-    var_dump($_POST);
-    echo '</pre>';
+    // echo '<pre>';
+    // var_dump($_POST);
+    // echo '</pre>';
 
     if (!isset($_POST['nom']) || strlen($_POST['nom']) < 2 || strlen($_POST['nom']) > 20) {
         $messages .= '<div class="alert alert-danger"> Le  champ nom doit être remplir et contenir entre 3 et 20 caractères</div>';
@@ -109,36 +109,32 @@ if ($_POST) { // si le formulaire est soumis :
 		<?php echo $messages;
 ?>
 			<div class="col-md-12">
-				<form method="POST" action="#">
+				<form method="POST" action="liste_contact.php">
 					<div class="row">
 						<div class="col">
-							<label for="nom">Nom : </label>				
-							<input class="form-group" type="text" id="nom" name="nom">
+							<label for="nom">Nom : </label>
+							<input class="form-control
+							" type="text" id="nom" name="nom">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
 							<label for="prenom">Prénom : </label>
-							<input class="form-group" type="text" id="prenom" name="prenom">
+							<input class="form-control" type="text" id="prenom" name="prenom">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
-						<div class="col">
+
 							<label for="telephone">Téléphone : </label>
-						</div>
-						<div class="col">
 							<input class="form-control" type="text" id="telephone" name="telephone">
 						</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
-						<div class="col">
 							<label for="annee_rencontre">Année : </label>
-						</div>
-						<div class="col">
-							<select class="custom-select" id="" name ="annee_rencontre">
+							<select class="custom-select" id="annee_rencontre" name ="annee_rencontre">
 							<!-- <option selected name="annee_rencontre">année</option> -->
 								<?php
 for ($i = date('Y'); $i >= date('Y') - 100; $i--) {
@@ -165,7 +161,7 @@ for ($i = date('Y'); $i >= date('Y') - 100; $i--) {
 							<label for="contact">Contact</label>
 						</div>
 						<div class="col">
-							<select class="custom-select" id="select" name ="type_contact">
+							<select class="custom-select" id="type_contact" name ="type_contact">
     							<option selected>contact</option>
     							<option value="ami">Ami</option>
     							<option value="famille">Famille</option>

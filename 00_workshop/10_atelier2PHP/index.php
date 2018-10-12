@@ -2,6 +2,15 @@
 require 'inc/init.inc.php';
 
 $page = $_GET;
+$contenu = '';
+$resultat = $pdo->query("SELECT destination, photo FROM voyage");
+while ($voyage = $resultat->fetch(PDO::FETCH_ASSOC)) {
+
+    $contenu .= '<div class="carousel-item">';
+    $contenu .= '<img class="d-block w-100 img-fluid" src="' . $voyage['photo'] . '" alt="' . $voyage['destination'] . '">';
+    $contenu .= '</div>';
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -47,7 +56,7 @@ $page = $_GET;
             </div>
         </nav>
     <?php
-if ($page['action'] === 'accueil') {?>
+if (isset($page['action']) && $page['action'] === 'accueil') {?>
 
         <!-- carousel -->
         <div class="row">
@@ -58,13 +67,15 @@ if ($page['action'] === 'accueil') {?>
                         <img class="d-block w-100 img-fluid" src="lib/img/caraibes1.jpg" alt="First slide">
                         </div>
                         <?php
-$resultat = $pdo->query("SELECT destination, photo FROM voyage");
-    while ($voyage = $resultat->fetch(PDO::FETCH_ASSOC)) {
+echo $contenu;
 
-        echo '<div class="carousel-item">';
-        echo '<img class="d-block w-100 img-fluid" src="' . $voyage['photo'] . '" alt="' . $voyage['destination'] . '">';
-        echo '</div>';
-    }
+/*$resultat = $pdo->query("SELECT destination, photo FROM voyage");
+while ($voyage = $resultat->fetch(PDO::FETCH_ASSOC)) {
+
+echo '<div class="carousel-item">';
+echo '<img class="d-block w-100 img-fluid" src="' . $voyage['photo'] . '" alt="' . $voyage['destination'] . '">';
+echo '</div>';
+}*/
     ?>
                         <!-- <div class="carousel-item">
                         <img class="d-block w-100 img-fluid" src="lib/img/caraibes_martinique_boucaniers.jpg" alt="Second slide">
@@ -113,7 +124,7 @@ $resultat = $pdo->query("SELECT destination, photo FROM voyage");
             </div>
         </div>
 
-    <?php } else if ($page['action'] === 'choix') {?>
+    <?php } else if (isset($page['action']) && $page['action'] === 'choix') {?>
 
         <!-- container -->
         <div class="container">
@@ -144,7 +155,7 @@ $resultat = $pdo->query("SELECT * FROM voyage");
         <!-- FIN .container -->
         </div>
 
-        <?php } else if ($page['action'] === 'reserver' && isset($page['action'])) {?>
+        <?php } else if (isset($page['action']) && $page['action'] === 'reserver' && isset($page['action'])) {?>
 
         <div class="row"> <!-- .row resa & image -->
             <!-- section-resa -->
@@ -190,7 +201,7 @@ $resultat = $pdo->query("SELECT * FROM voyage WHERE id_voyage = $page[voyage] ")
                 </div>
             <!--FIN section-resa -->
 
-             <?php } else if ($page['action'] === 'confirmer' || $page['action'] === 'payer') {?>
+             <?php } else if (isset($page['action']) && ($page['action'] === 'confirmer' || $page['action'] === 'payer')) {?>
 
             <div class="row"> <!--section image -->
                 <div class="col-md-12">
