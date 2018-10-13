@@ -10,9 +10,9 @@ function montantTTC($montant, $periode)
 {
     //echo $montant. $periode; //pour tester
     if ($periode == 'inf') {
-        $montantTTc = $mantant * 1.2;
+        $montantTTc = $montant * 1.2;
     } else {
-        $montantTTc = $mantant * 1.1;
+        $montantTTc = $montant * 1.1;
     }
 
     return " Le montant de votre travaux est de $montantTTC € TTC";
