@@ -11,7 +11,7 @@ if (!internauteEstConnecteEtAdmin()) {
 //debugV($_POST);
 
 if ($_POST) { // le formulaire est posté
-    // ICI il faidrait mettre tout les contrôle sur le formulaire...
+    // ICI il faudrait mettre tout les contrôle sur le formulaire...
     $photo_bdd = ''; // pour pouvoir insérer cette valeur par défaut en BDD
 
     // 5- suite de la PHOTO :
