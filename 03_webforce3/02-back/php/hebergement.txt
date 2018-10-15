@@ -1,0 +1,35 @@
+
+
+Pour héberger un site chez un hébergeur : 
+
+1 - s'inscrire et confirmer son inscription.
+
+2 - Création de la BDD : 
+    Lors de la création de la BDD, l'hébergeur vous communique les informations suivantes : 
+        - hôte de la BDD : souvant "localhost", mais peut être autre chose
+        - du nom de la BDD
+        - nom de l'utilisateur
+
+    En revanche le mot de passe de la BDD est indiqué par vous lors de sa création.
+
+    Puis importer votre BDD local que vous aurez préalablement exportée de votre PhpMyAdmin
+    de Xampp
+
+    3 - Préparer le fichier index.php : 
+        Y mettre les paramètres de connexion à la BDD décrits ci-dessus
+
+    4 - Uploader les fichiers source du site avec un client FTP type "FileZilla".
+    Attention à bien mettre ces fichiers dans les dossier prévu à cet effet : 
+        - html_public, public, www, etc...
+
+    5 - Si vous êtiez sur wordPress : on modifirait les URLs dans la table "option"
+    dans les enregistrement indice 1 et 2.
+
+    6 - Vérifier la bonne mise en ligne du site.
+
+
+
+
+
+
+
