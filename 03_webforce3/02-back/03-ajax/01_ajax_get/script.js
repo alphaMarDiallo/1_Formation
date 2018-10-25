@@ -2,7 +2,7 @@
 Statue de la requête Ajax : (readyState)
 -----------------------------------------
 
-0 - L'objet AJAX à été instancieé mais pas encore appelé
+0 - L'objet AJAX a été instancié mais pas encore appelé
 1 - On envoie l'objet (la requête) Ajax
 2 - La requête a été reçue
 3 - Le serveur traite la requête et commence à envoyer les données

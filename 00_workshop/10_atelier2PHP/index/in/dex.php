@@ -1,3 +1,5 @@
+
+
 <?php
 require 'inc/init.inc.php';
 $page = $_GET;
@@ -30,7 +32,7 @@ while ($voyage = $resultat->fetch(PDO::FETCH_ASSOC)) {
    <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg mb-4 fixed-top navbar-light">
             <div class="container">
-                <a class="navbar-brand" href="?action=index.php"><i class="fab fa-phoenix-framework"></i> Phoenix</a>
+                <a class="navbar-brand" href="?action=accueil"><i class="fab fa-phoenix-framework"></i> Phoenix</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -53,7 +55,7 @@ while ($voyage = $resultat->fetch(PDO::FETCH_ASSOC)) {
             </div>
         </nav>
     <?php
-if (empty($page['action']) || $page['action'] == 'index.php') {?>
+if (empty($page['action'])) {?>
 
         <!-- carousel -->
         <div class="row">
@@ -65,8 +67,40 @@ if (empty($page['action']) || $page['action'] == 'index.php') {?>
                         </div>
                         <?php
 echo $contenu;
+/*$resultat = $pdo->query("SELECT destination, photo FROM voyage");
+while ($voyage = $resultat->fetch(PDO::FETCH_ASSOC)) {
+echo '<div class="carousel-item">';
+echo '<img class="d-block w-100 img-fluid" src="' . $voyage['photo'] . '" alt="' . $voyage['destination'] . '">';
+echo '</div>';
+}*/
     ?>
-
+                        <!-- <div class="carousel-item">
+                        <img class="d-block w-100 img-fluid" src="lib/img/caraibes_martinique_boucaniers.jpg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                        <img class="d-block w-100 img-fluid" src="lib/img/grece_gregolimano.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                        <img class="d-block w-100 img-fluid" src="lib/img/maldives.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                        <img class="d-block w-100 img-fluid" src="lib/img/maldives_fino.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                        <img class="d-block w-100 img-fluid" src="lib/img/maldives_kani.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                        <img class="d-block w-100 img-fluid" src="lib/img/maurice.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                        <img class="d-block w-100 img-fluid" src="lib/img/maurice_albion.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                        <img class="d-block w-100 img-fluid" src="lib/img/sicile_kamarina.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                        <img class="d-block w-100 img-fluid" src="lib/img/turkoise.jpg" alt="Third slide">
+                        </div> -->
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -99,14 +133,14 @@ echo $contenu;
                         <?php
 $resultat = $pdo->query("SELECT * FROM voyage");
     while ($voyage = $resultat->fetch(PDO::FETCH_ASSOC)) {
-        // debug($voyage['id_voyage']);
+        // debug($voyage);
         echo ' <div class="col-md-4">';
         echo ' <div class="card border-info mb-3" style="width: 18rem;">';
         echo ' <img class="card-img-top" src="' . $voyage['photo'] . '" alt="' . $voyage['destination'] . '">';
         echo '<div class="card-body">';
         echo '<h5 class="card-title">Albion sauvage</h5>';
         echo '<p class ="card-text">' . $voyage['presentation'] . '</p>';
-        echo '<a href="?voyage_id=' . $voyage['id_voyage'] . '" class="btn btn-outline-info  btn-block">Réservez maintenant !</a>';
+        echo '<a href="?action=reserver&voyage=' . $voyage['id_voyage'] . '" class="btn btn-outline-info  btn-block">Réservez maintenant !</a>';
         echo ' </div>';
         echo '</div>';
         echo '</div>';
@@ -120,12 +154,12 @@ $resultat = $pdo->query("SELECT * FROM voyage");
         </div>
 
         <?php
-} else if (isset($page['action']) && $page['action'] == $voyage['id_voyage']) {?>
+} else if (isset($page['action']) && $page['action'] === 'reserver' && isset($page['action'])) {?>
 
         <div class="row"> <!-- .row resa & image -->
             <!-- section-resa -->
                 <?php
-$resultat = $pdo->query("SELECT photo, destination FROM voyage WHERE id_voyage = $voyage[id_voyage] ");
+$resultat = $pdo->query("SELECT * FROM voyage WHERE id_voyage = $page[voyage] ");
     while ($reservation = $resultat->fetch(PDO::FETCH_ASSOC)) {
     }
     echo '<div class="col-md-4">';
@@ -295,3 +329,4 @@ $resultat = $pdo->query("SELECT photo, destination FROM voyage WHERE id_voyage =
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 </body>
 </html>
+
